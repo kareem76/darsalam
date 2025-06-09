@@ -3,11 +3,6 @@ require 'capybara/dsl'
 require 'selenium-webdriver'
 require 'nokogiri'
 require 'json'
-
-require 'capybara'
-require 'capybara/dsl'
-require 'selenium-webdriver'
-require 'json'
 require 'set'
 
 Capybara.register_driver :chrome do |app|
@@ -21,7 +16,7 @@ Capybara.register_driver :chrome do |app|
 end
 
 Capybara.default_driver = :chrome
-Capybara.default_max_wait_time = 10
+Capybara.default_max_wait_time = 20
 
 include Capybara::DSL
 file_arg = ARGV[0] || 'file.txt'
@@ -56,29 +51,39 @@ def scrape_book_details
     bookurl: current_url
   }
 end
-
 category_urls.each do |url|
   puts "\n🟦 Visiting category: #{url}"
-  visit url
-  sleep 10
+  safe_visit(url)  # if you use safe_visit method, otherwise use `visit url`
+  sleep 2
 
- loop do
-  book_links = all('h6.archive-title a').map { |a| a[:href] }
+  # ✅ Add this line to skip category if nothing was loaded
+  next unless page.has_selector?('h6.archive-title a', wait: 10)
 
-  book_links.each do |link|
-    visit link
-    sleep 5
+  loop do
+    book_links = all('h6.archive-title a').map { |a| a[:href] }
 
-    book_data = scrape_book_details
-    puts "✅ Scraped: #{book_data[:title]}"
+    book_links.each do |link|
+      safe_visit(link)
+      sleep 5
 
-    File.open(json_path, 'a') do |f|
-      f.puts JSON.pretty_generate(book_data) + ","
+      book_data = scrape_book_details
+      puts "✅ Scraped: #{book_data[:title]}"
+
+      File.open(json_path, 'a') do |f|
+        f.puts JSON.pretty_generate(book_data) + ","
+      end
+
+      visit url
+      sleep 1
     end
 
-    visit url
+    # Your pagination logic here (not shown)
+    break unless page.has_selector?('a.next')  # Example condition
+    click_on 'التالي' rescue break
     sleep 10
   end
+end
+
 
   # Fix: Use link instead of button
   next_button = all('a.page-link').find { |a| a.text.include?('>') rescue false }

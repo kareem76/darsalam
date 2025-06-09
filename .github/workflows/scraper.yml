@@ -31,7 +31,7 @@ jobs:
           sudo apt-get install -y google-chrome-stable
           
 
-      - name: Install Ruby gems
+    - name: Install Ruby gems
         run: |
           gem install bundler
           bundle install || gem install capybara selenium-webdriver json mechanize

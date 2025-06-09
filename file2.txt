@@ -1,10 +1,9 @@
 الإملاء والترقيم (23) => https://daralsalam.com/ar/books/index?SubjectId=1605&ReArrange=1
 الاعمال الكاملة (34) => https://daralsalam.com/ar/books/index?SubjectId=1705&ReArrange=1
-الاقتصاد (506) => https://daralsalam.com/ar/books/index?SubjectId=2300&ReArrange=1
 البلاغة (166) => https://daralsalam.com/ar/books/index?SubjectId=1606&ReArrange=1
 التاريخ (182) => https://daralsalam.com/ar/books/index?SubjectId=1800&ReArrange=1
 التاريخ الإسلامي (463) => https://daralsalam.com/ar/books/index?SubjectId=1804&ReArrange=1
 التاريخ الحديث (67) => https://daralsalam.com/ar/books/index?SubjectId=1805&ReArrange=1
 التاريخ القديم (34) => https://daralsalam.com/ar/books/index?SubjectId=1803&ReArrange=1
 التجويد والقراءات (431) => https://daralsalam.com/ar/books/index?SubjectId=1503&ReArrange=1
-التراجم والسير والأنساب (1400) => https://daralsalam.com/ar/books/index?SubjectId=1806&ReArrange=1
+

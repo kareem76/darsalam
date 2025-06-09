@@ -2,8 +2,7 @@
 الطب النبوي (32) => https://daralsalam.com/ar/books/index?SubjectId=1902&ReArrange=1
 الطبخ (46) => https://daralsalam.com/ar/books/index?SubjectId=4601&ReArrange=1
 العروض والقافية (31) => https://daralsalam.com/ar/books/index?SubjectId=1604&ReArrange=1
-العقيدة وأصول الدين (787) => https://daralsalam.com/ar/books/index?SubjectId=1100&ReArrange=1
 العلوم (284) => https://daralsalam.com/ar/books/index?SubjectId=2400&ReArrange=1
 العلوم الاجتماعية (155) => https://daralsalam.com/ar/books/index?SubjectId=2500&ReArrange=1
 الفتاوى (163) => https://daralsalam.com/ar/books/index?SubjectId=1007&ReArrange=1
-الفقه الإسلامي (1382) => https://daralsalam.com/ar/books/index?SubjectId=1000&ReArrange=1
+

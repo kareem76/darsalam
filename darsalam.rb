@@ -28,7 +28,16 @@ file_arg = ARGV[0] || 'file.txt'
 chunk = File.basename(file_arg)  # keeps 'file1.txt'
 json_path = "books-output-#{chunk}.json"
 
-category_urls = File.readlines(file_arg, chomp: true).map { |line| line.split('=>').last.strip }
+category_urls = File.readlines(file_arg, chomp: true).map.with_index do |line, i|
+  if line.include?("=>")
+    url = line.split('=>').last&.strip
+    url unless url.nil? || url.empty?
+  else
+    puts "⚠️ تخطيت سطر غير صالح ##{i + 1}: #{line.inspect}"
+    nil
+  end
+end.compact
+
 File.write(json_path, "[\n") unless File.exist?(json_path)
 
 

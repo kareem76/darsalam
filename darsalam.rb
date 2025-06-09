@@ -54,6 +54,11 @@ end.compact
 File.write(json_path, "[\n") unless File.exist?(json_path)
 
 def scrape_book_details
+  unless page.has_selector?('div.book-title', wait: 10)
+    puts "⚠️ Skipping page: missing book title"
+    return nil
+  end
+
   doc = Nokogiri::HTML(page.html)
   {
     title: doc.at_css('div.book-title')&.text&.strip,
@@ -71,7 +76,7 @@ end
 category_urls.each do |url|
   puts "\n🟦 Visiting category: #{url}"
   safe_visit(url)
-  sleep 2
+  sleep 10
 
   next unless page.has_selector?('h6.archive-title a', wait: 10)
 
@@ -80,7 +85,14 @@ category_urls.each do |url|
 
     book_links.each do |link|
       safe_visit(link)
-      sleep 5
+      sleep 10
+
+book_data = scrape_book_details
+if book_data.nil? || book_data[:title].nil?
+  puts "❌ Skipped: missing or invalid data"
+  next
+end
+
 
       book_data = scrape_book_details
       puts "✅ Scraped: #{book_data[:title]}"
@@ -88,10 +100,15 @@ category_urls.each do |url|
       File.open(json_path, 'a') do |f|
         f.puts JSON.pretty_generate(book_data) + ","
       end
+safe_visit(url)
+sleep 10
 
-      safe_visit(url)
-      sleep 1
-    end
+book_data = scrape_book_details
+if book_data.nil? || book_data[:title].nil?
+  puts "❌ Skipped: missing or invalid data"
+  next
+end
+
 
     next_button = all('a.page-link').find { |a| a.text.include?('>') rescue false }
 

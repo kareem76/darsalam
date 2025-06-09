@@ -60,7 +60,7 @@ end
 category_urls.each do |url|
   puts "\n🟦 Visiting category: #{url}"
   visit url
-  sleep 2
+  sleep 10
 
  loop do
   book_links = all('h6.archive-title a').map { |a| a[:href] }
@@ -77,7 +77,7 @@ category_urls.each do |url|
     end
 
     visit url
-    sleep 1
+    sleep 10
   end
 
   # Fix: Use link instead of button
@@ -85,7 +85,7 @@ category_urls.each do |url|
 
   if next_button
     next_button.click
-    sleep 5
+    sleep 10
   else
     puts "✅ Finished category"
    break

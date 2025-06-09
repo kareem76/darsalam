@@ -4,12 +4,24 @@ require 'selenium-webdriver'
 require 'nokogiri'
 require 'json'
 
-Capybara.default_driver = :selenium
-Capybara.default_max_wait_time = 10
+require 'capybara'
+require 'capybara/dsl'
+require 'selenium-webdriver'
+require 'json'
+require 'set'
 
-Capybara.register_driver :selenium do |app|
-  Capybara::Selenium::Driver.new(app, browser: :firefox)
+Capybara.register_driver :chrome do |app|
+  options = Selenium::WebDriver::Chrome::Options.new
+  options.add_argument('--headless')
+  options.add_argument('--disable-gpu')
+  options.add_argument('--no-sandbox')
+  options.add_argument('--disable-dev-shm-usage')
+
+  Capybara::Selenium::Driver.new(app, browser: :chrome, options: options)
 end
+
+Capybara.default_driver = :chrome
+Capybara.default_max_wait_time = 10
 
 include Capybara::DSL
 file_arg = ARGV[0] || 'file.txt'

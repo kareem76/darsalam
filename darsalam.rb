@@ -13,10 +13,12 @@ end
 
 include Capybara::DSL
 file_arg = ARGV[0] || 'file.txt'
-category_urls = File.readlines(file_arg, chomp: true).map { |line| line.split('=>').last.strip }
+chunk = File.basename(file_arg, '.txt') # removes ".txt"
+json_path = "books-output-#{chunk}.json"
 
-json_path = file_arg.gsub('.txt', '.json') # e.g., file1.txt → file1.json
+category_urls = File.readlines(file_arg, chomp: true).map { |line| line.split('=>').last.strip }
 File.write(json_path, "[\n") unless File.exist?(json_path)
+
 
 
 def scrape_book_details

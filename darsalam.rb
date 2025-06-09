@@ -19,8 +19,26 @@ Capybara.default_driver = :chrome
 Capybara.default_max_wait_time = 20
 
 include Capybara::DSL
+
+# ✅ Safe visit with retry logic
+def safe_visit(url, retries = 3)
+  attempts = 0
+  begin
+    visit url
+  rescue Net::ReadTimeout, Selenium::WebDriver::Error::UnknownError => e
+    attempts += 1
+    puts "⚠️ Timeout visiting #{url}, attempt #{attempts} of #{retries}"
+    if attempts < retries
+      sleep 5
+      retry
+    else
+      puts "❌ Failed to visit #{url} after #{retries} attempts: #{e.message}"
+    end
+  end
+end
+
 file_arg = ARGV[0] || 'file.txt'
-chunk = File.basename(file_arg)  # keeps 'file1.txt'
+chunk = File.basename(file_arg)
 json_path = "books-output-#{chunk}.json"
 
 category_urls = File.readlines(file_arg, chomp: true).map.with_index do |line, i|
@@ -34,8 +52,6 @@ category_urls = File.readlines(file_arg, chomp: true).map.with_index do |line, i
 end.compact
 
 File.write(json_path, "[\n") unless File.exist?(json_path)
-
-
 
 def scrape_book_details
   doc = Nokogiri::HTML(page.html)
@@ -51,12 +67,12 @@ def scrape_book_details
     bookurl: current_url
   }
 end
+
 category_urls.each do |url|
   puts "\n🟦 Visiting category: #{url}"
-  safe_visit(url)  # if you use safe_visit method, otherwise use `visit url`
+  safe_visit(url)
   sleep 2
 
-  # ✅ Add this line to skip category if nothing was loaded
   next unless page.has_selector?('h6.archive-title a', wait: 10)
 
   loop do
@@ -73,32 +89,23 @@ category_urls.each do |url|
         f.puts JSON.pretty_generate(book_data) + ","
       end
 
-      visit url
+      safe_visit(url)
       sleep 1
     end
 
-    # Your pagination logic here (not shown)
-    break unless page.has_selector?('a.next')  # Example condition
-    click_on 'التالي' rescue break
-    sleep 10
+    next_button = all('a.page-link').find { |a| a.text.include?('>') rescue false }
+
+    if next_button
+      next_button.click
+      sleep 10
+    else
+      puts "✅ Finished category"
+      break
+    end
   end
 end
 
-
-  # Fix: Use link instead of button
-  next_button = all('a.page-link').find { |a| a.text.include?('>') rescue false }
-
-  if next_button
-    next_button.click
-    sleep 10
-  else
-    puts "✅ Finished category"
-   break
-    end
-  end # ← end of loop
-end # ← end of category_urls.each
-
-# Fix trailing comma and close array
+# Fix trailing comma and close JSON array
 content = File.read(json_path).strip.chomp(',')
 File.write(json_path, content + "\n]\n")
 puts "✅ Done! All books saved to #{json_path}"

@@ -20,7 +20,6 @@ Capybara.default_max_wait_time = 20
 
 include Capybara::DSL
 
-# ✅ Safe visit with retry logic
 def safe_visit(url, retries = 3)
   attempts = 0
   begin
@@ -71,7 +70,7 @@ def scrape_book_details
     imgurl: doc.at_css('img[src*="/Files/Images"]')&.[]('src'),
     bookurl: current_url
   }
-
+end
 
 category_urls.each do |url|
   puts "\n🟦 Visiting category: #{url}"
@@ -87,28 +86,20 @@ category_urls.each do |url|
       safe_visit(link)
       sleep 10
 
-book_data = scrape_book_details
-if book_data.nil? || book_data[:title].nil?
-  puts "❌ Skipped: missing or invalid data"
-  next
-end
-
-
       book_data = scrape_book_details
-      puts "✅ Scraped: #{book_data[:title]}"
+      if book_data.nil? || book_data[:title].nil?
+        puts "❌ Skipped: missing or invalid data"
+        next
+      end
 
+      puts "✅ Scraped: #{book_data[:title]}"
       File.open(json_path, 'a') do |f|
         f.puts JSON.pretty_generate(book_data) + ","
       end
-safe_visit(url)
-sleep 10
 
-book_data = scrape_book_details
-if book_data.nil? || book_data[:title].nil?
-  puts "❌ Skipped: missing or invalid data"
-  next
-end
-
+      safe_visit(url)
+      sleep 10
+    end
 
     next_button = all('a.page-link').find { |a| a.text.include?('>') rescue false }
 
@@ -122,7 +113,7 @@ end
   end
 end
 
-# Fix trailing comma and close JSON array
+# Finalize JSON file
 content = File.read(json_path).strip.chomp(',')
 File.write(json_path, content + "\n]\n")
 puts "✅ Done! All books saved to #{json_path}"

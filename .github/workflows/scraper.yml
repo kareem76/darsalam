@@ -26,15 +26,14 @@ jobs:
         ruby-version: 3.2
 
     - name: Install system dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y google-chrome-stable
-          
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y google-chrome-stable
 
     - name: Install Ruby gems
-        run: |
-          gem install bundler
-          bundle install || gem install capybara selenium-webdriver json mechanize
+      run: |
+        gem install bundler
+        bundle install || gem install capybara selenium-webdriver json mechanize
 
     - name: Run Scraper
       run: ruby darsalam.rb ${{ matrix.chunk }}

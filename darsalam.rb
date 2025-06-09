@@ -25,7 +25,7 @@ Capybara.default_max_wait_time = 10
 
 include Capybara::DSL
 file_arg = ARGV[0] || 'file.txt'
-chunk = File.basename(file_arg, '.txt') # removes ".txt"
+chunk = File.basename(file_arg)  # keeps 'file1.txt'
 json_path = "books-output-#{chunk}.json"
 
 category_urls = File.readlines(file_arg, chomp: true).map { |line| line.split('=>').last.strip }

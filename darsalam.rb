@@ -71,7 +71,7 @@ def scrape_book_details
     imgurl: doc.at_css('img[src*="/Files/Images"]')&.[]('src'),
     bookurl: current_url
   }
-end
+
 
 category_urls.each do |url|
   puts "\n🟦 Visiting category: #{url}"

@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 7
       matrix:
-        chunk: [file1.txt, file2.txt, file3.txt, file4.txt, file5.txt, file6.txt, file7.txt, file8.txt, file9.txt, file10.txt]
+        chunk: [file1.txt, file2.txt, file3.txt, file4.txt, file5.txt, file6.txt, file7.txt, file8.txt, file9.txt, file10.txt, file10.txt, file11.txt, file12.txt, file13.txt, file14.txt, file15.txt, file16.txt, file17.txt, file18.txt, file19.txt]
 
     steps:
     - name: Checkout code

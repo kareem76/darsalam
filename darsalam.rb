@@ -41,14 +41,15 @@ chunk = File.basename(file_arg)
 json_path = "books-output-#{chunk}.json"
 
 category_urls = File.readlines(file_arg, chomp: true).map.with_index do |line, i|
-  if line.include?("=>")
-    url = line.split('=>').last&.strip
-    url unless url.nil? || url.empty?
+  url = line[/(https?:\/\/\S+)/, 1]
+  if url
+    url.strip
   else
-    puts "⚠️ تخطيت سطر غير صالح ##{i + 1}: #{line.inspect}"
+    puts "⚠️ لم أجد رابطًا في السطر ##{i + 1}: #{line.inspect}"
     nil
   end
 end.compact
+
 
 File.write(json_path, "[\n") unless File.exist?(json_path)
 

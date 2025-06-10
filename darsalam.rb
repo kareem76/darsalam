@@ -72,24 +72,24 @@ def scrape_book_details
   }
 end
 
-visited_links = Set.new
-
 category_urls.each do |url|
   puts "\n🟦 Visiting category: #{url}"
   safe_visit(url)
-  sleep 10
+  sleep 5
 
   next unless page.has_selector?('h6.archive-title a', wait: 10)
+
+  scraped_links = Set.new
 
   loop do
     book_links = all('h6.archive-title a').map { |a| a[:href] }.uniq
 
     book_links.each do |link|
-      next if visited_links.include?(link)
-      visited_links << link
+      next if scraped_links.include?(link)
+      scraped_links << link
 
       safe_visit(link)
-      sleep 10
+      sleep 5
 
       book_data = scrape_book_details
       if book_data.nil? || book_data[:title].nil?
@@ -101,13 +101,15 @@ category_urls.each do |url|
       File.open(json_path, 'a') do |f|
         f.puts JSON.pretty_generate(book_data) + ","
       end
+
+      back
+      sleep 2
     end
 
     next_button = all('a.page-link').find { |a| a.text.include?('>') rescue false }
-
     if next_button
       next_button.click
-      sleep 10
+      sleep 5
     else
       puts "✅ Finished category"
       break
@@ -115,8 +117,7 @@ category_urls.each do |url|
   end
 end
 
-# Finalize JSON
+# Finalize JSON file
 content = File.read(json_path).strip.chomp(',')
 File.write(json_path, content + "\n]\n")
-
 puts "✅ Done! All books saved to #{json_path}"

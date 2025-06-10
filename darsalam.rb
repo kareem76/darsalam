@@ -79,25 +79,24 @@ category_urls.each do |url|
   next unless page.has_selector?('h6.archive-title a', wait: 10)
 
   loop do
-    book_links = all('h6.archive-title a').map { |a| a[:href] }.uniq
-
     book_links.each do |link|
-      execute_script("window.open('#{link}', '_blank');")
-      within_window(windows.last) do
-        sleep 5
-        book_data = scrape_book_details
-        if book_data.nil? || book_data[:title].nil?
-          puts "❌ Skipped: missing or invalid data"
-        else
-          puts "✅ Scraped: #{book_data[:title]}"
-          File.open(json_path, 'a') do |f|
-            f.puts JSON.pretty_generate(book_data) + ","
-          end
-        end
-        close_current_window
+  execute_script("window.open('#{link}', '_blank');")
+  within_window(windows.last) do
+    sleep 5
+    book_data = scrape_book_details
+    if book_data.nil? || book_data[:title].nil?
+      puts "❌ Skipped: missing or invalid data"
+    else
+      puts "✅ Scraped: #{book_data[:title]}"
+      File.open(json_path, 'a') do |f|
+        f.puts JSON.pretty_generate(book_data) + ","
       end
-      switch_to_window(windows.first)
     end
+    current_window.close
+  end
+  switch_to_window(windows.first)
+end
+
 
     next_button = all('a.page-link').find { |a| a.text.include?('>') rescue false }
     if next_button

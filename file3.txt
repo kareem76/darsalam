@@ -1,7 +1,5 @@
 
 التصوف (304) => https://daralsalam.com/ar/books/index?SubjectId=1103&ReArrange=1
-التفسير (485) => https://daralsalam.com/ar/books/index?SubjectId=1501&ReArrange=1
-الثقافة العامة (71) => https://daralsalam.com/ar/books/index?SubjectId=4801&ReArrange=1
 الجغرافيا (69) => https://daralsalam.com/ar/books/index?SubjectId=2800&ReArrange=1
 الخدمة الاجتماعية (24) => https://daralsalam.com/ar/books/index?SubjectId=2507&ReArrange=1
 الخطب والدروس (89) => https://daralsalam.com/ar/books/index?SubjectId=2900&ReArrange=1

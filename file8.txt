@@ -1,8 +1,4 @@
 النثر الفني (160) => https://daralsalam.com/ar/books/index?SubjectId=1703&ReArrange=1
-النحو والصرف (647) => https://daralsalam.com/ar/books/index?SubjectId=1602&ReArrange=1
 تاريخ التفسير ومناهج المفسرين (56) => https://daralsalam.com/ar/books/index?SubjectId=1504&ReArrange=1
-تنمية بشرية (518) => https://daralsalam.com/ar/books/index?SubjectId=3100&ReArrange=1
-دراسات أدبية (479) => https://daralsalam.com/ar/books/index?SubjectId=1704&ReArrange=1
 دراسات بيئية (39) => https://daralsalam.com/ar/books/index?SubjectId=2401&ReArrange=1
-دراسات تاريخية (334) => https://daralsalam.com/ar/books/index?SubjectId=1808&ReArrange=1
 دراسات طبية (73) => https://daralsalam.com/ar/books/index?SubjectId=1903&ReArrange=1

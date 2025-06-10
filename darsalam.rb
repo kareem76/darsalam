@@ -52,7 +52,7 @@ end.compact
 File.write(json_path, "[\n") unless File.exist?(json_path)
 
 def scrape_book_details
-  unless page.has_selector?('div.book-title', wait: 10)
+  unless page.has_selector?('div.book-title', wait: 15)
     puts "⚠️ Skipping page: missing book title"
     return nil
   end

@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 5
       matrix:
-        chunk: [file1.txt]  # You can add more like file2.txt, file3.txt
+        chunk: [file1.txt, file2.txt, file3.txt, file4.txt, file5.txt, file6.txt, file7.txt,file8.txt,ile9.txt, file10.txt]  # You can add more like file2.txt, file3.txt
 
     steps:
       - name: Checkout code
@@ -41,5 +41,5 @@ jobs:
       - name: Upload JSON
         uses: actions/upload-artifact@v4
         with:
-          name: result-${{ matrix.chunk }}
+          name: salam-${{ matrix.chunk }}
           path: books-output-${{ matrix.chunk }}.json

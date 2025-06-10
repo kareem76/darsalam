@@ -14,32 +14,32 @@ jobs:
     strategy:
       max-parallel: 5
       matrix:
-        chunk: [file1.txt, file2.txt, file3.txt, file4.txt, file5.txt, file6.txt, file7.txt, file8.txt, file9.txt, file10.txt, file10.txt]
+        chunk: [file1.txt]  # You can add more like file2.txt, file3.txt
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-    - name: Set up Ruby
-      uses: ruby/setup-ruby@v1
-      with:
-        ruby-version: 3.2
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.2
 
-    - name: Install system dependencies
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y google-chrome-stable
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y google-chrome-stable
 
-    - name: Install Ruby gems
-      run: |
-        gem install bundler
-        bundle install || gem install capybara selenium-webdriver json mechanize
+      - name: Install Ruby gems
+        run: |
+          gem install bundler
+          bundle install || gem install capybara selenium-webdriver json mechanize
 
-    - name: Run Scraper
-      run: ruby darsalam.rb ${{ matrix.chunk }}
+      - name: Run Scraper
+        run: ruby darsalam.rb ${{ matrix.chunk }}
 
-    - name: Upload JSON
-      uses: actions/upload-artifact@v4
-      with:
-        name: result-${{ matrix.chunk }}
-        path: books-output-${{ matrix.chunk }}.json
+      - name: Upload JSON
+        uses: actions/upload-artifact@v4
+        with:
+          name: result-${{ matrix.chunk }}
+          path: books-output-${{ matrix.chunk }}.json

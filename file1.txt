@@ -1,8 +1,2 @@
 أخرى (2) => https://daralsalam.com/ar/books/index?SubjectId=1&ReArrange=1
-أدب (220) => https://daralsalam.com/ar/books/index?SubjectId=1700&ReArrange=1
-الأحاجي والنوادر والفكاهات (48) => https://daralsalam.com/ar/books/index?SubjectId=4500&ReArrange=1
 الإحصاء (12) => https://daralsalam.com/ar/books/index?SubjectId=2502&ReArrange=1
-الإدارة (126) => https://daralsalam.com/ar/books/index?SubjectId=2503&ReArrange=1
-الأديان والفرق والمذاهب (202) => https://daralsalam.com/ar/books/index?SubjectId=1102&ReArrange=1
-الأسرة (285) => https://daralsalam.com/ar/books/index?SubjectId=4600&ReArrange=1
-الإعلام (114) => https://daralsalam.com/ar/books/index?SubjectId=3900&ReArrange=1

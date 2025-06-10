@@ -56,7 +56,11 @@ def scrape_book_details
     puts "⚠️ Skipping page: missing book title"
     return nil
   end
-
+# Try clicking the "التعريف بالكتاب" tab if it's present
+  if page.has_selector?('a#ABook_intro', wait: 2)
+    find('a#ABook_intro').click
+    sleep 1
+  end
   doc = Nokogiri::HTML(page.html)
   {
     title: doc.at_css('div.book-title')&.text&.strip,
@@ -67,6 +71,7 @@ def scrape_book_details
     price: doc.at_css('span.after-price')&.text&.strip,
     publisher: doc.at_css('div[ng-hide*="Publishing_name"] a')&.text&.strip,
     imgurl: doc.at_css('img[src*="/Files/Images"]')&.[]('src'),
+    summary: doc.at_css('div[ng-bind-html="myData1[0].BookDecription"]')&.text&.strip,
     bookurl: current_url
   }
 end

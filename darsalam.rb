@@ -3,7 +3,6 @@ require 'capybara/dsl'
 require 'selenium-webdriver'
 require 'nokogiri'
 require 'json'
-require 'set'
 
 Capybara.register_driver :chrome do |app|
   options = Selenium::WebDriver::Chrome::Options.new
@@ -53,7 +52,7 @@ end.compact
 File.write(json_path, "[\n") unless File.exist?(json_path)
 
 def scrape_book_details
-  unless page.has_selector?('div.book-title', wait: 15)
+  unless page.has_selector?('div.book-title', wait: 10)
     puts "⚠️ Skipping page: missing book title"
     return nil
   end
@@ -79,31 +78,25 @@ category_urls.each do |url|
 
   next unless page.has_selector?('h6.archive-title a', wait: 10)
 
-  scraped_links = Set.new
-
   loop do
     book_links = all('h6.archive-title a').map { |a| a[:href] }.uniq
 
     book_links.each do |link|
-      next if scraped_links.include?(link)
-      scraped_links << link
-
-      safe_visit(link)
-      sleep 5
-
-      book_data = scrape_book_details
-      if book_data.nil? || book_data[:title].nil?
-        puts "❌ Skipped: missing or invalid data"
-        next
+      execute_script("window.open('#{link}', '_blank');")
+      within_window(windows.last) do
+        sleep 5
+        book_data = scrape_book_details
+        if book_data.nil? || book_data[:title].nil?
+          puts "❌ Skipped: missing or invalid data"
+        else
+          puts "✅ Scraped: #{book_data[:title]}"
+          File.open(json_path, 'a') do |f|
+            f.puts JSON.pretty_generate(book_data) + ","
+          end
+        end
+        close_current_window
       end
-
-      puts "✅ Scraped: #{book_data[:title]}"
-      File.open(json_path, 'a') do |f|
-        f.puts JSON.pretty_generate(book_data) + ","
-      end
-
-       safe_visit(url) 
-      sleep 10
+      switch_to_window(windows.first)
     end
 
     next_button = all('a.page-link').find { |a| a.text.include?('>') rescue false }
@@ -117,7 +110,7 @@ category_urls.each do |url|
   end
 end
 
-# Finalize JSON file
+# Finalize JSON
 content = File.read(json_path).strip.chomp(',')
 File.write(json_path, content + "\n]\n")
 puts "✅ Done! All books saved to #{json_path}"

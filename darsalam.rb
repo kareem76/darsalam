@@ -89,7 +89,7 @@ category_urls.each do |url|
         if book_data.nil? || book_data[:title].nil?
           puts "❌ Skipped: missing or invalid data"
         else
-          puts "✅ Scraped: #{book_data[:title]}"
+          #puts "✅ Scraped: #{book_data[:title]}"
           File.open(json_path, 'a') do |f|
             f.puts JSON.pretty_generate(book_data) + ","
           end

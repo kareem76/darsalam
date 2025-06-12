@@ -35,25 +35,33 @@ class AseerAlKotbScraper
 
   page_links = {}
 
-  loop do
-    current = current_url
-    puts "Scraping book links from page: #{current}"
+ loop do
+  current = current_url
+  puts "Scraping book links from page: #{current}"
 
-    links = all('a[href*="/ar/books/"]').map { |a| URI.join(BASE_URL, a[:href]).to_s }.uniq
-    page_links[current] = links
-if has_css?('button[rel="next"]', wait: 5)
-  find('button[rel="next"]').click
-elsif has_css?('a[rel="next"]', wait: 1)
-  find('a[rel="next"]').click
-else
-  break
-end
-sleep 2
+  links = all('a[href*="/ar/books/"]').map { |a| URI.join(BASE_URL, a[:href]).to_s }.uniq
+  page_links[current] = links
 
+  # Scroll down gradually to try to reveal the next button
+  5.times do
+    execute_script("window.scrollBy(0, window.innerHeight);")
+    sleep 1
+    break if has_css?('button[rel="next"]', visible: true, wait: 1) ||
+             has_css?('a[rel="next"]', visible: true, wait: 1)
   end
 
-  page_links
+  if has_css?('button[rel="next"]', visible: true, wait: 5)
+    find('button[rel="next"]').click
+  elsif has_css?('a[rel="next"]', visible: true, wait: 5)
+    find('a[rel="next"]').click
+  else
+    puts "No next button found — pagination complete."
+    break
+  end
+
+  sleep 2
 end
+
 
 
   def scrape_book_details(book_url)

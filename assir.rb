@@ -36,12 +36,17 @@ class AseerAlKotbScraper
     puts "Scraping book links from page: #{paginated_url}"
 
     visit paginated_url
-    sleep 1
+    if has_css?('a[href*="/ar/books/"]', wait: 5)
+      links = all('a[href*="/ar/books/"]', visible: true).map do |a|
+        href = a[:href]
+        URI.join("https://www.aseeralkotb.com", href).to_s if href
+      end.compact.uniq
 
-    links = all('a[href*="/ar/books/"]').map { |a| URI.join(BASE_URL, a[:href]).to_s }.uniq
-    all_links.concat(links)
-
-    puts "  Found #{links.size} books"
+      all_links.concat(links)
+      puts "  Found #{links.size} books"
+    else
+      puts "  Warning: No book links found on this page."
+    end
   end
 
   all_links.uniq

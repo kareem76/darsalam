@@ -12,7 +12,7 @@ jobs:
   scrape:
     runs-on: ubuntu-latest
     strategy:
-      max-parallel: 10
+      max-parallel: 1
       matrix:
         chunk: [file1.txt, file2.txt, file3.txt, file4.txt, file5.txt, file6.txt, file7.txt, file8.txt, file9.txt, file10.txt ]  # You can add more like file2.txt, file3.txt
 
@@ -28,7 +28,11 @@ jobs:
       - name: Install system dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y google-chrome-stable
+          sudo apt-get install -y wget unzip xvfb
+          wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+          sudo apt install -y ./google-chrome-stable_current_amd64.deb
+          sudo apt-get install -y chromium-chromedriver
+          sudo ln -sf /usr/lib/chromium-browser/chromedriver /usr/bin/chromedriver
 
       - name: Install Ruby gems
         run: |
@@ -36,7 +40,7 @@ jobs:
           bundle install || gem install capybara selenium-webdriver json nokogiri
 
       - name: Run Scraper
-        run: ruby assir.rb ${{ matrix.chunk }} results${{ matrix.chunk }}.json
+        run: xvfb-run -a  ruby assir.rb ${{ matrix.chunk }} results${{ matrix.chunk }}.json
 
 
       - name: Upload result

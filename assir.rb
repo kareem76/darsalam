@@ -15,7 +15,7 @@ Capybara.register_driver :chrome do |app|
 end
 
 Capybara.default_driver = :chrome
-Capybara.default_max_wait_time = 20
+Capybara.default_max_wait_time = 10
 
 include Capybara::DSL
 

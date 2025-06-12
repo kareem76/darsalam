@@ -34,38 +34,51 @@ class AseerAlKotbScraper
   sleep 2
 
   page_links = {}
-  visited_pages = Set.new
+  seen_urls = Set.new
+  previous_count = 0
+  attempts = 0
 
   loop do
     current = current_url
-    break if visited_pages.include?(current)
-    visited_pages << current
-
-    puts "Scraping book links from page: #{current}"
 
     links = all('a[href*="/ar/books/"]').map { |a| URI.join(BASE_URL, a[:href]).to_s }.uniq
-    page_links[current] = links
+    new_links = links - seen_urls.to_a
+
+    page_links[current] = new_links
+    seen_urls.merge(new_links)
+
+    puts "Scraping book links from page: #{current} — found #{new_links.size} new links"
 
     begin
-      if has_css?('button[rel="next"]', wait: 5)
-        next_button = find('button[rel="next"]', visible: true)
-        next_button.click
+      if has_button?(nil, wait: 5, visible: :all)
+        button = find('button[wire\\:click*="nextPage"]', visible: :all)
+
+        # Scroll to button to trigger lazy load
+        execute_script("arguments[0].scrollIntoView(true);", button)
+        button.click
+
         sleep 3
-      elsif has_css?('a[rel="next"]', wait: 3)
-        find('a[rel="next"]').click
-        sleep 3
+
+        # Check if new books loaded, if not, break loop
+        current_count = all('a[href*="/ar/books/"]').count
+        break if current_count == previous_count
+
+        previous_count = current_count
+        attempts = 0
       else
         puts "No next button found — pagination complete."
         break
       end
-    rescue Capybara::ElementNotFound
-      puts "Next button not found — ending pagination."
-      break
+    rescue => e
+      attempts += 1
+      puts "Next button error: #{e.message} (attempt #{attempts})"
+      break if attempts >= 3
     end
   end
 
   page_links
 end
+
 
 
   def scrape_book_details(book_url)

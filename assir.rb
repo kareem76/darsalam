@@ -3,7 +3,7 @@ require 'capybara/dsl'
 require 'selenium-webdriver'
 require 'nokogiri'
 require 'json'
-
+$stdout.sync = true
 # Setup Capybara with headless Firefox
 Capybara.register_driver :selenium_firefox do |app|
   options = Selenium::WebDriver::Firefox::Options.new

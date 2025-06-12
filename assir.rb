@@ -91,8 +91,10 @@ end
 
 # === Main script ===
 
-input_file = ARGV[0] || 'list.txt'
-output_file = ARGV[1] || 'results.json'
+input_file = ARGV[0] || 'file.txt'
+
+# If ARGV[1] is given, use it; otherwise, generate based on input_file name
+output_file = ARGV[1] || "results/#{File.basename(input_file, '.txt')}.json"
 
 scraper = AseerAlKotbScraper.new
 scraped_urls = []

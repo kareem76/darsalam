@@ -28,11 +28,7 @@ jobs:
       - name: Install system dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y wget unzip xvfb
-          wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-          sudo apt install -y ./google-chrome-stable_current_amd64.deb
-          sudo apt-get install -y chromium-chromedriver
-          sudo ln -sf /usr/lib/chromium-browser/chromedriver /usr/bin/chromedriver
+          sudo apt-get install -y google-chrome-stable
 
       - name: Install Ruby gems
         run: |
@@ -40,14 +36,14 @@ jobs:
           bundle install || gem install capybara selenium-webdriver json nokogiri
 
       - name: Run Scraper
-        run: xvfb-run -a  ruby assir.rb ${{ matrix.chunk }} results${{ matrix.chunk }}.json
+        run:  ruby assir.rb ${{ matrix.chunk }} results${{ matrix.chunk }}.json
 
 
       - name: Upload result
         uses: actions/upload-artifact@v4
         with:
-          name: results-${{ matrix.chunk }}
-          path: results${{ matrix.chunk }}.json
+    name: results-${{ matrix.chunk }}
+    path: results/$(basename "${{ matrix.chunk }}" .txt).json
 
   combine:
     runs-on: ubuntu-latest

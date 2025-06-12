@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        chunk: [file1.txt, file2.txt, file3.txt, file4.txt, file5.txt, file6.txt, file7.txt, file8.txt, file9.txt, file10.txt ]  # You can add more like file2.txt, file3.txt
+        chunk: [file1.txt, file2.txt, file3.txt, file4.txt, file5.txt, file6.txt, file7.txt, file8.txt, file9.txt, file10.txt]
 
     steps:
       - name: Checkout code
@@ -36,14 +36,15 @@ jobs:
           bundle install || gem install capybara selenium-webdriver json nokogiri
 
       - name: Run Scraper
-        run:  ruby assir.rb ${{ matrix.chunk }} results${{ matrix.chunk }}.json
-
+        run: |
+          mkdir -p results
+          ruby assir.rb ${{ matrix.chunk }}
 
       - name: Upload result
         uses: actions/upload-artifact@v4
         with:
-    name: results-${{ matrix.chunk }}
-    path: results/$(basename "${{ matrix.chunk }}" .txt).json
+          name: results-${{ matrix.chunk }}
+          path: results/$(basename "${{ matrix.chunk}" .txt).json
 
   combine:
     runs-on: ubuntu-latest

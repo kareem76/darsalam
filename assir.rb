@@ -1,33 +1,25 @@
 require 'capybara'
-require 'capybara/dsl'
 require 'selenium-webdriver'
-require 'nokogiri'
-require 'json'
-$stdout.sync = true
+require 'tmpdir'
 
-Capybara.register_driver :chrome do |app|
-  options = Selenium::WebDriver::Chrome::Options.new
-  
-  # Comment out or remove headless to see browser window:
-  # options.add_argument('--headless')
-  # options.add_argument('--disable-gpu')
-  # Add a unique user data dir for every session to avoid conflicts
+def new_capybara_session_with_unique_profile
   user_data_dir = Dir.mktmpdir('chrome_user_data')
-  options.add_argument("--user-data-dir=#{user_data_dir}")
 
+  options = Selenium::WebDriver::Chrome::Options.new
+  options.add_argument('--headless')
+  options.add_argument('--disable-gpu')
   options.add_argument('--no-sandbox')
   options.add_argument('--disable-dev-shm-usage')
-  
-  # Optional: add a user-agent to mimic real browser
-  options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) "\
-                       "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36")
+  options.add_argument("--user-data-dir=#{user_data_dir}")
 
-  Capybara::Selenium::Driver.new(app, browser: :chrome, options: options)
+  Capybara::Session.new(:selenium_chrome_headless, nil).tap do |session|
+    # Re-register a driver with unique user data dir (or create a new driver)
+    Capybara.register_driver :"chrome_#{user_data_dir}" do |app|
+      Capybara::Selenium::Driver.new(app, browser: :chrome, options: options)
+    end
+    session.driver = Capybara.drivers[:"chrome_#{user_data_dir}"].call(nil)
+  end
 end
-
-Capybara.default_driver = :chrome
-Capybara.default_max_wait_time = 20
-
 
 class AseerAlKotbScraper
   include Capybara::DSL

@@ -1,5 +1,86 @@
-علوم الحاسوب وتقنية المعلومات (20) => https://daralsalam.com/ar/books/index?SubjectId=2402&ReArrange=1
-فضائل القرآن وآدابه (58) => https://daralsalam.com/ar/books/index?SubjectId=1505&ReArrange=1
-فقه مقارن (67) => https://daralsalam.com/ar/books/index?SubjectId=1009&ReArrange=1
-قرآن كريم (123) => https://daralsalam.com/ar/books/index?SubjectId=1506&ReArrange=1
-قصص الأنبياء (74) => https://daralsalam.com/ar/books/index?SubjectId=1802&ReArrange=1
+Publisher: منشورات مقبرة الكتب, Books Count: 1, URL: https://www.aseeralkotb.com/ar/publishers/%D9%85%D9%86%D8%B4%D9%88%D8%B1%D8%A7%D8%AA-%D9%85%D9%82%D8%A8%D8%B1%D8%A9-%D8%A7%D9%84%D9%83%D8%AA%D8%A8
+Publisher: بيت الكتب للنشر والتوزبع, Books Count: 41, URL: https://www.aseeralkotb.com/ar/publishers/%D8%A8%D9%8A%D8%AA-%D8%A7%D9%84%D9%83%D8%AA%D8%A8-%D9%84%D9%84%D9%86%D8%B4%D8%B1-%D9%88%D8%A7%D9%84%D8%AA%D9%88%D8%B2%D8%A8%D8%B9
+Publisher: سندس للإنتاج والتوزيع, Books Count: 44, URL: https://www.aseeralkotb.com/ar/publishers/%D8%B3%D9%86%D8%AF%D8%B3-%D9%84%D9%84%D8%A5%D9%86%D8%AA%D8%A7%D8%AC-%D9%88%D8%A7%D9%84%D8%AA%D9%88%D8%B2%D9%8A%D8%B9
+Publisher: لقمان للنشر والتوزيع, Books Count: 85, URL: https://www.aseeralkotb.com/ar/publishers/%D9%84%D9%82%D9%85%D8%A7%D9%86-%D9%84%D9%84%D9%86%D8%B4%D8%B1-%D9%88%D8%A7%D9%84%D8%AA%D9%88%D8%B2%D9%8A%D8%B9
+Publisher: Crown Currency, Books Count: 1, URL: https://www.aseeralkotb.com/ar/publishers/Crown-Currency
+Publisher: Riverrun, Books Count: 1, URL: https://www.aseeralkotb.com/ar/publishers/Riverrun
+Publisher: ILEX, Books Count: 1, URL: https://www.aseeralkotb.com/ar/publishers/ILEX
+Publisher: HI-IS & POD, Books Count: 1, URL: https://www.aseeralkotb.com/ar/publishers/HI-IS-%26-POD
+Publisher: Lagom, Books Count: 2, URL: https://www.aseeralkotb.com/ar/publishers/Lagom
+Publisher: Riverhead Books, Books Count: 2, URL: https://www.aseeralkotb.com/ar/publishers/Riverhead-Books
+Publisher: Revell, Books Count: 5, URL: https://www.aseeralkotb.com/ar/publishers/Revell
+Publisher: Dark Horse Books, Books Count: 4, URL: https://www.aseeralkotb.com/ar/publishers/Dark-Horse-Books
+Publisher: Ecco, Books Count: 1, URL: https://www.aseeralkotb.com/ar/publishers/Ecco
+Publisher: Amazon Publishing, Books Count: 2, URL: https://www.aseeralkotb.com/ar/publishers/Amazon-Publishing
+Publisher: BDouin, Books Count: 4, URL: https://www.aseeralkotb.com/ar/publishers/BDouin
+Publisher: Dc Comics, Books Count: 4, URL: https://www.aseeralkotb.com/ar/publishers/Dc-Comics
+Publisher: Kogan Page, Books Count: 1, URL: https://www.aseeralkotb.com/ar/publishers/Kogan-Page
+Publisher: IDW Publishing, Books Count: 3, URL: https://www.aseeralkotb.com/ar/publishers/IDW-Publishing
+Publisher: Back Bay Books, Books Count: 1, URL: https://www.aseeralkotb.com/ar/publishers/Back-Bay-Books
+Publisher: 팩토리나인 - Factory Nine, Books Count: 2, URL: https://www.aseeralkotb.com/ar/publishers/%ED%8C%A9%ED%86%A0%EB%A6%AC%EB%82%98%EC%9D%B8---Factory-Nine
+Publisher: GOODMI, Books Count: 1, URL: https://www.aseeralkotb.com/ar/publishers/GOODMI
+Publisher: YKY, Books Count: 2, URL: https://www.aseeralkotb.com/ar/publishers/YKY
+Publisher: Forum, Books Count: 2, URL: https://www.aseeralkotb.com/ar/publishers/Forum
+Publisher: Klett-Cotta, Books Count: 4, URL: https://www.aseeralkotb.com/ar/publishers/Klett-Cotta
+Publisher: Luchterhand, Books Count: 1, URL: https://www.aseeralkotb.com/ar/publishers/Luchterhand
+Publisher: Modtryk, Books Count: 1, URL: https://www.aseeralkotb.com/ar/publishers/Modtryk
+Publisher: Politikens forlag, Books Count: 1, URL: https://www.aseeralkotb.com/ar/publishers/Politikens-forlag
+Publisher: Otava, Books Count: 1, URL: https://www.aseeralkotb.com/ar/publishers/Otava
+Publisher: Aylak Adam Publishing, Books Count: 1, URL: https://www.aseeralkotb.com/ar/publishers/Aylak-Adam-Publishing
+Publisher: Eksik Parça Yayınları, Books Count: 1, URL: https://www.aseeralkotb.com/ar/publishers/Eksik-Par%C3%A7a-Yay%C4%B1nlar%C4%B1
+Publisher: Suhrkamp Verlag, Books Count: 1, URL: https://www.aseeralkotb.com/ar/publishers/Suhrkamp-Verlag
+Publisher: Casterman, Books Count: 1, URL: https://www.aseeralkotb.com/ar/publishers/Casterman
+Publisher: Gallimard, Books Count: 1, URL: https://www.aseeralkotb.com/ar/publishers/Gallimard
+Publisher: Mind To Mind, Books Count: 1, URL: https://www.aseeralkotb.com/ar/publishers/Mind-To-Mind
+Publisher: Su Book, Books Count: 3, URL: https://www.aseeralkotb.com/ar/publishers/Su-Book
+Publisher: Go Woo, Books Count: 1, URL: https://www.aseeralkotb.com/ar/publishers/Go-Woo
+Publisher: Sakha, Books Count: 2, URL: https://www.aseeralkotb.com/ar/publishers/Sakha
+Publisher: منشورات كتوبيا - المغرب, Books Count: 7, URL: https://www.aseeralkotb.com/ar/publishers/%D9%85%D9%86%D8%B4%D9%88%D8%B1%D8%A7%D8%AA-%D9%83%D8%AA%D9%88%D8%A8%D9%8A%D8%A7---%D8%A7%D9%84%D9%85%D8%BA%D8%B1%D8%A8
+Publisher: أ ب ت ناشرون, Books Count: 1, URL: https://www.aseeralkotb.com/ar/publishers/%D8%A3-%D8%A8-%D8%AA-%D9%86%D8%A7%D8%B4%D8%B1%D9%88%D9%86
+Publisher: مؤسسة الجريسي, Books Count: 5, URL: https://www.aseeralkotb.com/ar/publishers/%D9%85%D8%A4%D8%B3%D8%B3%D8%A9-%D8%A7%D9%84%D8%AC%D8%B1%D9%8A%D8%B3%D9%8A
+Publisher: مكتبة المتنبي, Books Count: 3, URL: https://www.aseeralkotb.com/ar/publishers/%D9%85%D9%83%D8%AA%D8%A8%D8%A9-%D8%A7%D9%84%D9%85%D8%AA%D9%86%D8%A8%D9%8A
+Publisher: مؤسسة المعارف (لبنان), Books Count: 23, URL: https://www.aseeralkotb.com/ar/publishers/%D9%85%D8%A4%D8%B3%D8%B3%D8%A9-%D8%A7%D9%84%D9%85%D8%B9%D8%A7%D8%B1%D9%81-%28%D9%84%D8%A8%D9%86%D8%A7%D9%86%29
+Publisher: دار الأرقم, Books Count: 1, URL: https://www.aseeralkotb.com/ar/publishers/%D8%AF%D8%A7%D8%B1-%D8%A7%D9%84%D8%A3%D8%B1%D9%82%D9%85
+Publisher: دار أجنان, Books Count: 2, URL: https://www.aseeralkotb.com/ar/publishers/%D8%AF%D8%A7%D8%B1-%D8%A3%D8%AC%D9%86%D8%A7%D9%86
+Publisher: التربوين للنشر والتوزيع, Books Count: 19, URL: https://www.aseeralkotb.com/ar/publishers/%D8%A7%D9%84%D8%AA%D8%B1%D8%A8%D9%88%D9%8A%D9%86-%D9%84%D9%84%D9%86%D8%B4%D8%B1-%D9%88%D8%A7%D9%84%D8%AA%D9%88%D8%B2%D9%8A%D8%B9
+Publisher: مكتبة ضحى, Books Count: 2, URL: https://www.aseeralkotb.com/ar/publishers/%D9%85%D9%83%D8%AA%D8%A8%D8%A9-%D8%B6%D8%AD%D9%89
+Publisher: دار همس, Books Count: 5, URL: https://www.aseeralkotb.com/ar/publishers/%D8%AF%D8%A7%D8%B1-%D9%87%D9%85%D8%B3
+Publisher: دار ياسمينا للترجمة والنشر والتوزيع, Books Count: 4, URL: https://www.aseeralkotb.com/ar/publishers/%D8%AF%D8%A7%D8%B1-%D9%8A%D8%A7%D8%B3%D9%85%D9%8A%D9%86%D8%A7-%D9%84%D9%84%D8%AA%D8%B1%D8%AC%D9%85%D8%A9-%D9%88%D8%A7%D9%84%D9%86%D8%B4%D8%B1-%D9%88%D8%A7%D9%84%D8%AA%D9%88%D8%B2%D9%8A%D8%B9
+Publisher: دار ابن النفيس, Books Count: 3, URL: https://www.aseeralkotb.com/ar/publishers/%D8%AF%D8%A7%D8%B1-%D8%A7%D8%A8%D9%86-%D8%A7%D9%84%D9%86%D9%81%D9%8A%D8%B3
+Publisher: مركز المسبار للدراسات والبحوث, Books Count: 1, URL: https://www.aseeralkotb.com/ar/publishers/%D9%85%D8%B1%D9%83%D8%B2-%D8%A7%D9%84%D9%85%D8%B3%D8%A8%D8%A7%D8%B1-%D9%84%D9%84%D8%AF%D8%B1%D8%A7%D8%B3%D8%A7%D8%AA-%D9%88%D8%A7%D9%84%D8%A8%D8%AD%D9%88%D8%AB
+Publisher: سفير للنشر والتوزيع, Books Count: 1, URL: https://www.aseeralkotb.com/ar/publishers/%D8%B3%D9%81%D9%8A%D8%B1-%D9%84%D9%84%D9%86%D8%B4%D8%B1-%D9%88%D8%A7%D9%84%D8%AA%D9%88%D8%B2%D9%8A%D8%B9
+Publisher: مركز العلوم الطبيعية, Books Count: 1, URL: https://www.aseeralkotb.com/ar/publishers/%D9%85%D8%B1%D9%83%D8%B2-%D8%A7%D9%84%D8%B9%D9%84%D9%88%D9%85-%D8%A7%D9%84%D8%B7%D8%A8%D9%8A%D8%B9%D9%8A%D8%A9
+Publisher: قصة للنشر والتوزيع, Books Count: 2, URL: https://www.aseeralkotb.com/ar/publishers/%D9%82%D8%B5%D8%A9-%D9%84%D9%84%D9%86%D8%B4%D8%B1-%D9%88%D8%A7%D9%84%D8%AA%D9%88%D8%B2%D9%8A%D8%B9
+Publisher: House 101, Books Count: 1, URL: https://www.aseeralkotb.com/ar/publishers/House-101
+Publisher: بيت ريما, Books Count: 50, URL: https://www.aseeralkotb.com/ar/publishers/%D8%A8%D9%8A%D8%AA-%D8%B1%D9%8A%D9%85%D8%A7
+Publisher: B B C Books, Books Count: 1, URL: https://www.aseeralkotb.com/ar/publishers/B-B-C-Books
+Publisher: Sandycove, Books Count: 1, URL: https://www.aseeralkotb.com/ar/publishers/Sandycove
+Publisher: Torva, Books Count: 6, URL: https://www.aseeralkotb.com/ar/publishers/Torva
+Publisher: Inklore, Books Count: 3, URL: https://www.aseeralkotb.com/ar/publishers/Inklore
+Publisher: Pelican, Books Count: 4, URL: https://www.aseeralkotb.com/ar/publishers/Pelican
+Publisher: ملاذ للنشر والتوزيع, Books Count: 25, URL: https://www.aseeralkotb.com/ar/publishers/%D9%85%D9%84%D8%A7%D8%B0-%D9%84%D9%84%D9%86%D8%B4%D8%B1-%D9%88%D8%A7%D9%84%D8%AA%D9%88%D8%B2%D9%8A%D8%B9
+Publisher: Fern Press, Books Count: 2, URL: https://www.aseeralkotb.com/ar/publishers/Fern-Press
+Publisher: Penguin Classics, Books Count: 19, URL: https://www.aseeralkotb.com/ar/publishers/Penguin-Classics
+Publisher: Everyman's Library, Books Count: 2, URL: https://www.aseeralkotb.com/ar/publishers/Everyman%27s-Library
+Publisher: Witness Books, Books Count: 2, URL: https://www.aseeralkotb.com/ar/publishers/Witness-Books
+Publisher: BBC Books, Books Count: 3, URL: https://www.aseeralkotb.com/ar/publishers/BBC-Books
+Publisher: Pop Press, Books Count: 4, URL: https://www.aseeralkotb.com/ar/publishers/Pop-Press
+Publisher: مجاز, Books Count: 3, URL: https://www.aseeralkotb.com/ar/publishers/%D9%85%D8%AC%D8%A7%D8%B2
+Publisher: المختبر السعودي للنقد, Books Count: 1, URL: https://www.aseeralkotb.com/ar/publishers/%D8%A7%D9%84%D9%85%D8%AE%D8%AA%D8%A8%D8%B1-%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A-%D9%84%D9%84%D9%86%D9%82%D8%AF
+Publisher: نجمة القراء للنشر والتوزيع, Books Count: 20, URL: https://www.aseeralkotb.com/ar/publishers/%D9%86%D8%AC%D9%85%D8%A9-%D8%A7%D9%84%D9%82%D8%B1%D8%A7%D8%A1-%D9%84%D9%84%D9%86%D8%B4%D8%B1-%D9%88%D8%A7%D9%84%D8%AA%D9%88%D8%B2%D9%8A%D8%B9
+Publisher: كتب ميريام, Books Count: 10, URL: https://www.aseeralkotb.com/ar/publishers/%D9%83%D8%AA%D8%A8-%D9%85%D9%8A%D8%B1%D9%8A%D8%A7%D9%85
+Publisher: Motivate Media Group, Books Count: 1, URL: https://www.aseeralkotb.com/ar/publishers/Motivate-Media-Group
+Publisher: Safe Kids, Books Count: 7, URL: https://www.aseeralkotb.com/ar/publishers/Safe-Kids
+Publisher: منصة الأدباء, Books Count: 1, URL: https://www.aseeralkotb.com/ar/publishers/%D9%85%D9%86%D8%B5%D8%A9-%D8%A7%D9%84%D8%A3%D8%AF%D8%A8%D8%A7%D8%A1
+Publisher: مكتبة دار الحجاز للنشر والتوزيع, Books Count: 173, URL: https://www.aseeralkotb.com/ar/publishers/%D9%85%D9%83%D8%AA%D8%A8%D8%A9-%D8%AF%D8%A7%D8%B1-%D8%A7%D9%84%D8%AD%D8%AC%D8%A7%D8%B2-%D9%84%D9%84%D9%86%D8%B4%D8%B1-%D9%88%D8%A7%D9%84%D8%AA%D9%88%D8%B2%D9%8A%D8%B9
+Publisher: دار رشم للنشر والتوزيع, Books Count: 88, URL: https://www.aseeralkotb.com/ar/publishers/%D8%AF%D8%A7%D8%B1-%D8%B1%D8%B4%D9%85-%D9%84%D9%84%D9%86%D8%B4%D8%B1-%D9%88%D8%A7%D9%84%D8%AA%D9%88%D8%B2%D9%8A%D8%B9
+Publisher: دار الإداوة للنشر, Books Count: 6, URL: https://www.aseeralkotb.com/ar/publishers/%D8%AF%D8%A7%D8%B1-%D8%A7%D9%84%D8%A5%D8%AF%D8%A7%D9%88%D8%A9-%D9%84%D9%84%D9%86%D8%B4%D8%B1
+Publisher: دار الحكمة  لندن, Books Count: 1, URL: https://www.aseeralkotb.com/ar/publishers/%D8%AF%D8%A7%D8%B1-%D8%A7%D9%84%D8%AD%D9%83%D9%85%D8%A9--%D9%84%D9%86%D8%AF%D9%86
+Publisher: دار  إرفاء للنشر والتوزيع, Books Count: 135, URL: https://www.aseeralkotb.com/ar/publishers/%D8%AF%D8%A7%D8%B1--%D8%A5%D8%B1%D9%81%D8%A7%D8%A1-%D9%84%D9%84%D9%86%D8%B4%D8%B1-%D9%88%D8%A7%D9%84%D8%AA%D9%88%D8%B2%D9%8A%D8%B9
+Publisher: William Heinemann, Books Count: 1, URL: https://www.aseeralkotb.com/ar/publishers/William-Heinemann
+Publisher: منشورات نمو, Books Count: 7, URL: https://www.aseeralkotb.com/ar/publishers/%D9%85%D9%86%D8%B4%D9%88%D8%B1%D8%A7%D8%AA-%D9%86%D9%85%D9%88
+Publisher: مؤسسة ألسن ولسن, Books Count: 11, URL: https://www.aseeralkotb.com/ar/publishers/%D9%85%D8%A4%D8%B3%D8%B3%D8%A9-%D8%A3%D9%84%D8%B3%D9%86-%D9%88%D9%84%D8%B3%D9%86
+Publisher: موكابوك, Books Count: 32, URL: https://www.aseeralkotb.com/ar/publishers/%D9%85%D9%88%D9%83%D8%A7%D8%A8%D9%88%D9%83
+Publisher: Kids Skills, Books Count: 5, URL: https://www.aseeralkotb.com/ar/publishers/Kids-Skills
+Publisher: نظر للمعارف والفنون, Books Count: 1, URL: https://www.aseeralkotb.com/ar/publishers/%D9%86%D8%B8%D8%B1-%D9%84%D9%84%D9%85%D8%B9%D8%A7%D8%B1%D9%81-%D9%88%D8%A7%D9%84%D9%81%D9%86%D9%88%D9%86
+Publisher: سجود, Books Count: 1, URL: https://www.aseeralkotb.com/ar/publishers/%D8%B3%D8%AC%D9%88%D8%AF

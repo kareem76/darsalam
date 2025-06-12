@@ -1,4 +1,90 @@
-النثر الفني (160) => https://daralsalam.com/ar/books/index?SubjectId=1703&ReArrange=1
-تاريخ التفسير ومناهج المفسرين (56) => https://daralsalam.com/ar/books/index?SubjectId=1504&ReArrange=1
-دراسات بيئية (39) => https://daralsalam.com/ar/books/index?SubjectId=2401&ReArrange=1
-دراسات طبية (73) => https://daralsalam.com/ar/books/index?SubjectId=1903&ReArrange=1
+Publisher: HACHETTE, Books Count: 48, URL: https://www.aseeralkotb.com/ar/publishers/HACHETTE
+Publisher: Orchard Books, Books Count: 22, URL: https://www.aseeralkotb.com/ar/publishers/Orchard-Books
+Publisher: Manoj Publications, Books Count: 117, URL: https://www.aseeralkotb.com/ar/publishers/Manoj-Publications
+Publisher: Page Two Books, Books Count: 14, URL: https://www.aseeralkotb.com/ar/publishers/Page-Two-Books
+Publisher: Igloo Books, Books Count: 86, URL: https://www.aseeralkotb.com/ar/publishers/Igloo-Books
+Publisher: Pushkin Vertigo, Books Count: 3, URL: https://www.aseeralkotb.com/ar/publishers/Pushkin-Vertigo
+Publisher: Pat-a-Cake, Books Count: 1, URL: https://www.aseeralkotb.com/ar/publishers/Pat-a-Cake
+Publisher: Scribner, Books Count: 13, URL: https://www.aseeralkotb.com/ar/publishers/Scribner
+Publisher: Princeton University Press, Books Count: 2, URL: https://www.aseeralkotb.com/ar/publishers/Princeton-University-Press
+Publisher: Gaia, Books Count: 1, URL: https://www.aseeralkotb.com/ar/publishers/Gaia
+Publisher: Fourth Estate, Books Count: 3, URL: https://www.aseeralkotb.com/ar/publishers/Fourth-Estate
+Publisher: Timber Press, Books Count: 2, URL: https://www.aseeralkotb.com/ar/publishers/Timber-Press
+Publisher: The Saif House, Books Count: 1, URL: https://www.aseeralkotb.com/ar/publishers/The-Saif-House
+Publisher: Two Roads, Books Count: 3, URL: https://www.aseeralkotb.com/ar/publishers/Two-Roads
+Publisher: Bookouture, Books Count: 1, URL: https://www.aseeralkotb.com/ar/publishers/Bookouture
+Publisher: Weidenfeld & Nicolson, Books Count: 12, URL: https://www.aseeralkotb.com/ar/publishers/Weidenfeld-%26-Nicolson
+Publisher: Trapeze, Books Count: 1, URL: https://www.aseeralkotb.com/ar/publishers/Trapeze
+Publisher: Healing Arts Press, Books Count: 2, URL: https://www.aseeralkotb.com/ar/publishers/Healing-Arts-Press
+Publisher: Nuvoice Press, Books Count: 1, URL: https://www.aseeralkotb.com/ar/publishers/Nuvoice-Press
+Publisher: Dey Street Books, Books Count: 2, URL: https://www.aseeralkotb.com/ar/publishers/Dey-Street-Books
+Publisher: Arthur A. Levine Books, Books Count: 1, URL: https://www.aseeralkotb.com/ar/publishers/Arthur-A.-Levine-Books
+Publisher: CreateSpace, Books Count: 2, URL: https://www.aseeralkotb.com/ar/publishers/CreateSpace
+Publisher: Thorndike Press Large Print, Books Count: 1, URL: https://www.aseeralkotb.com/ar/publishers/Thorndike-Press-Large-Print
+Publisher: Delacorte Press, Books Count: 5, URL: https://www.aseeralkotb.com/ar/publishers/Delacorte-Press
+Publisher: Lake Union Publishing, Books Count: 3, URL: https://www.aseeralkotb.com/ar/publishers/Lake-Union-Publishing
+Publisher: Katherine Tegen Books, Books Count: 2, URL: https://www.aseeralkotb.com/ar/publishers/Katherine-Tegen-Books
+Publisher: The Dial Press, Books Count: 2, URL: https://www.aseeralkotb.com/ar/publishers/The-Dial-Press
+Publisher: AMACOM, Books Count: 3, URL: https://www.aseeralkotb.com/ar/publishers/AMACOM
+Publisher: Center Street, Books Count: 5, URL: https://www.aseeralkotb.com/ar/publishers/Center-Street
+Publisher: Wiley, Books Count: 2, URL: https://www.aseeralkotb.com/ar/publishers/Wiley
+Publisher: Fireside, Books Count: 1, URL: https://www.aseeralkotb.com/ar/publishers/Fireside
+Publisher: Gallup Press, Books Count: 1, URL: https://www.aseeralkotb.com/ar/publishers/Gallup-Press
+Publisher: ZZ Books Wagon, Books Count: 1, URL: https://www.aseeralkotb.com/ar/publishers/ZZ-Books-Wagon
+Publisher: Thomas Nelson, Books Count: 2, URL: https://www.aseeralkotb.com/ar/publishers/Thomas-Nelson
+Publisher: HarperOne, Books Count: 3, URL: https://www.aseeralkotb.com/ar/publishers/HarperOne
+Publisher: Bpi India Pvt Ltd, Books Count: 1, URL: https://www.aseeralkotb.com/ar/publishers/Bpi-India-Pvt-Ltd
+Publisher: Summersdale, Books Count: 7, URL: https://www.aseeralkotb.com/ar/publishers/Summersdale
+Publisher: Fitzcarraldo Editions, Books Count: 1, URL: https://www.aseeralkotb.com/ar/publishers/Fitzcarraldo-Editions
+Publisher: The Readers Paradise, Books Count: 1, URL: https://www.aseeralkotb.com/ar/publishers/The-Readers-Paradise
+Publisher: Penguin Workshop, Books Count: 9, URL: https://www.aseeralkotb.com/ar/publishers/Penguin-Workshop
+Publisher: Dauphin Publications, Books Count: 1, URL: https://www.aseeralkotb.com/ar/publishers/Dauphin-Publications
+Publisher: Notion Press, Books Count: 1, URL: https://www.aseeralkotb.com/ar/publishers/Notion-Press
+Publisher: Shambhala, Books Count: 2, URL: https://www.aseeralkotb.com/ar/publishers/Shambhala
+Publisher: Algonquin Young Readers, Books Count: 3, URL: https://www.aseeralkotb.com/ar/publishers/Algonquin-Young-Readers
+Publisher: Short Books, Books Count: 4, URL: https://www.aseeralkotb.com/ar/publishers/Short-Books
+Publisher: Rebel Girls, Books Count: 2, URL: https://www.aseeralkotb.com/ar/publishers/Rebel-Girls
+Publisher: Underlined, Books Count: 1, URL: https://www.aseeralkotb.com/ar/publishers/Underlined
+Publisher: Austin Macauley Publishers, Books Count: 6, URL: https://www.aseeralkotb.com/ar/publishers/Austin-Macauley-Publishers
+Publisher: Kyle Books, Books Count: 2, URL: https://www.aseeralkotb.com/ar/publishers/Kyle-Books
+Publisher: Pyramid, Books Count: 1, URL: https://www.aseeralkotb.com/ar/publishers/Pyramid
+Publisher: Conan, Books Count: 1, URL: https://www.aseeralkotb.com/ar/publishers/Conan
+Publisher: Kyle Cathie, Books Count: 1, URL: https://www.aseeralkotb.com/ar/publishers/Kyle-Cathie
+Publisher: Hamlyn, Books Count: 2, URL: https://www.aseeralkotb.com/ar/publishers/Hamlyn
+Publisher: G&D Media, Books Count: 2, URL: https://www.aseeralkotb.com/ar/publishers/G%26D-Media
+Publisher: Red fox, Books Count: 5, URL: https://www.aseeralkotb.com/ar/publishers/Red-fox
+Publisher: Vie, Books Count: 5, URL: https://www.aseeralkotb.com/ar/publishers/Vie
+Publisher: Tor Books, Books Count: 3, URL: https://www.aseeralkotb.com/ar/publishers/Tor-Books
+Publisher: Century, Books Count: 19, URL: https://www.aseeralkotb.com/ar/publishers/Century
+Publisher: Marysue Rucci Books, Books Count: 2, URL: https://www.aseeralkotb.com/ar/publishers/Marysue-Rucci-Books
+Publisher: SAGA PRESS, Books Count: 3, URL: https://www.aseeralkotb.com/ar/publishers/SAGA-PRESS
+Publisher: Gallery Publishing Group, Books Count: 20, URL: https://www.aseeralkotb.com/ar/publishers/Gallery-Publishing-Group
+Publisher: Little Genius Books, Books Count: 2, URL: https://www.aseeralkotb.com/ar/publishers/Little-Genius-Books
+Publisher: The Economist, Books Count: 1, URL: https://www.aseeralkotb.com/ar/publishers/The-Economist
+Publisher: Simon Element, Books Count: 2, URL: https://www.aseeralkotb.com/ar/publishers/Simon-Element
+Publisher: Health communication, Books Count: 2, URL: https://www.aseeralkotb.com/ar/publishers/Health-communication
+Publisher: Everything, Books Count: 5, URL: https://www.aseeralkotb.com/ar/publishers/Everything
+Publisher: Avid Reader Press books, Books Count: 4, URL: https://www.aseeralkotb.com/ar/publishers/Avid-Reader-Press-books
+Publisher: Regnery Publishing, Books Count: 2, URL: https://www.aseeralkotb.com/ar/publishers/Regnery-Publishing
+Publisher: Margaret K. McElderry books, Books Count: 8, URL: https://www.aseeralkotb.com/ar/publishers/Margaret-K.-McElderry-books
+Publisher: Atheneum, Books Count: 1, URL: https://www.aseeralkotb.com/ar/publishers/Atheneum
+Publisher: The Bridge Street Press, Books Count: 1, URL: https://www.aseeralkotb.com/ar/publishers/The-Bridge-Street-Press
+Publisher: Harvard University Press, Books Count: 2, URL: https://www.aseeralkotb.com/ar/publishers/Harvard-University-Press
+Publisher: The Book People, Books Count: 1, URL: https://www.aseeralkotb.com/ar/publishers/The-Book-People
+Publisher: Rick Riordan Presents, Books Count: 1, URL: https://www.aseeralkotb.com/ar/publishers/Rick-Riordan-Presents
+Publisher: children's press, Books Count: 5, URL: https://www.aseeralkotb.com/ar/publishers/children%27s-press
+Publisher: Clarkson Potter, Books Count: 8, URL: https://www.aseeralkotb.com/ar/publishers/Clarkson-Potter
+Publisher: Dell Publishing, Books Count: 2, URL: https://www.aseeralkotb.com/ar/publishers/Dell-Publishing
+Publisher: Delta Publishing, Books Count: 1, URL: https://www.aseeralkotb.com/ar/publishers/Delta-Publishing
+Publisher: Elliott & Thompson Limited, Books Count: 1, URL: https://www.aseeralkotb.com/ar/publishers/Elliott-%26-Thompson-Limited
+Publisher: Fair Winds Press, Books Count: 1, URL: https://www.aseeralkotb.com/ar/publishers/Fair-Winds-Press
+Publisher: Girl Friday Books, Books Count: 1, URL: https://www.aseeralkotb.com/ar/publishers/Girl-Friday-Books
+Publisher: West Margin Press, Books Count: 1, URL: https://www.aseeralkotb.com/ar/publishers/West-Margin-Press
+Publisher: Guinness World Records, Books Count: 1, URL: https://www.aseeralkotb.com/ar/publishers/Guinness-World-Records
+Publisher: Hamad Bin Khalifa University Press, Books Count: 1, URL: https://www.aseeralkotb.com/ar/publishers/Hamad-Bin-Khalifa-University-Press
+Publisher: Helm, Books Count: 1, URL: https://www.aseeralkotb.com/ar/publishers/Helm
+Publisher: Insight Kids, Books Count: 3, URL: https://www.aseeralkotb.com/ar/publishers/Insight-Kids
+Publisher: Barron's, Books Count: 1, URL: https://www.aseeralkotb.com/ar/publishers/Barron%27s
+Publisher: Lady Bird, Books Count: 35, URL: https://www.aseeralkotb.com/ar/publishers/Lady-Bird
+Publisher: The Browser, Books Count: 2, URL: https://www.aseeralkotb.com/ar/publishers/The-Browser
+Publisher: LiFi Publications Pvt Ltd, Books Count: 1, URL: https://www.aseeralkotb.com/ar/publishers/LiFi-Publications-Pvt-Ltd

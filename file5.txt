@@ -1,6 +1,90 @@
-الطب البديل (43) => https://daralsalam.com/ar/books/index?SubjectId=1901&ReArrange=1
-الطب النبوي (32) => https://daralsalam.com/ar/books/index?SubjectId=1902&ReArrange=1
-الطبخ (46) => https://daralsalam.com/ar/books/index?SubjectId=4601&ReArrange=1
-العروض والقافية (31) => https://daralsalam.com/ar/books/index?SubjectId=1604&ReArrange=1
-العلوم (284) => https://daralsalam.com/ar/books/index?SubjectId=2400&ReArrange=1
-
+Publisher: Granta Books, Books Count: 5, URL: https://www.aseeralkotb.com/ar/publishers/Granta-Books
+Publisher: Picador, Books Count: 54, URL: https://www.aseeralkotb.com/ar/publishers/Picador
+Publisher: Walker Books Ltd, Books Count: 43, URL: https://www.aseeralkotb.com/ar/publishers/Walker-Books-Ltd
+Publisher: G.P. Putnam's Sons, Books Count: 3, URL: https://www.aseeralkotb.com/ar/publishers/G.P.-Putnam%27s-Sons
+Publisher: Tim Duggan Books, Books Count: 1, URL: https://www.aseeralkotb.com/ar/publishers/Tim-Duggan-Books
+Publisher: Ballantine Books, Books Count: 4, URL: https://www.aseeralkotb.com/ar/publishers/Ballantine-Books
+Publisher: Open Road Media, Books Count: 1, URL: https://www.aseeralkotb.com/ar/publishers/Open-Road-Media
+Publisher: Penguin Press, Books Count: 2, URL: https://www.aseeralkotb.com/ar/publishers/Penguin-Press
+Publisher: Pocket Books, Books Count: 10, URL: https://www.aseeralkotb.com/ar/publishers/Pocket-Books
+Publisher: Puffin Books, Books Count: 24, URL: https://www.aseeralkotb.com/ar/publishers/Puffin-Books
+Publisher: Icon Books, Books Count: 1, URL: https://www.aseeralkotb.com/ar/publishers/Icon-Books
+Publisher: QUIRK BOOKS, Books Count: 3, URL: https://www.aseeralkotb.com/ar/publishers/QUIRK-BOOKS
+Publisher: walker books, Books Count: 6, URL: https://www.aseeralkotb.com/ar/publishers/walker-books
+Publisher: rock the boat, Books Count: 3, URL: https://www.aseeralkotb.com/ar/publishers/rock-the-boat
+Publisher: Green tea, Books Count: 2, URL: https://www.aseeralkotb.com/ar/publishers/Green-tea
+Publisher: Harper Business, Books Count: 8, URL: https://www.aseeralkotb.com/ar/publishers/Harper-Business
+Publisher: New World Library, Books Count: 4, URL: https://www.aseeralkotb.com/ar/publishers/New-World-Library
+Publisher: Flatiron Books, Books Count: 3, URL: https://www.aseeralkotb.com/ar/publishers/Flatiron-Books
+Publisher: Pushkin Children's Books, Books Count: 1, URL: https://www.aseeralkotb.com/ar/publishers/Pushkin-Children%27s-Books
+Publisher: Graphix, Books Count: 12, URL: https://www.aseeralkotb.com/ar/publishers/Graphix
+Publisher: Ember, Books Count: 7, URL: https://www.aseeralkotb.com/ar/publishers/Ember
+Publisher: Scholastic, Books Count: 102, URL: https://www.aseeralkotb.com/ar/publishers/Scholastic
+Publisher: Simon & Schuster Children's UK, Books Count: 80, URL: https://www.aseeralkotb.com/ar/publishers/Simon-%26-Schuster-Children%27s-UK
+Publisher: Black Swan, Books Count: 9, URL: https://www.aseeralkotb.com/ar/publishers/Black-Swan
+Publisher: St. Martin's Press, Books Count: 13, URL: https://www.aseeralkotb.com/ar/publishers/St.-Martin%27s-Press
+Publisher: bantam books, Books Count: 22, URL: https://www.aseeralkotb.com/ar/publishers/bantam-books
+Publisher: Riverhead, Books Count: 3, URL: https://www.aseeralkotb.com/ar/publishers/Riverhead
+Publisher: amulet books, Books Count: 3, URL: https://www.aseeralkotb.com/ar/publishers/amulet-books
+Publisher: Ft press, Books Count: 5, URL: https://www.aseeralkotb.com/ar/publishers/Ft-press
+Publisher: Corgi Childrens, Books Count: 5, URL: https://www.aseeralkotb.com/ar/publishers/Corgi-Childrens
+Publisher: Pan Macmillan, Books Count: 155, URL: https://www.aseeralkotb.com/ar/publishers/Pan-Macmillan
+Publisher: Blackfriars, Books Count: 1, URL: https://www.aseeralkotb.com/ar/publishers/Blackfriars
+Publisher: Headline, Books Count: 106, URL: https://www.aseeralkotb.com/ar/publishers/Headline
+Publisher: Random House Trade, Books Count: 2, URL: https://www.aseeralkotb.com/ar/publishers/Random-House-Trade
+Publisher: Definitions, Books Count: 2, URL: https://www.aseeralkotb.com/ar/publishers/Definitions
+Publisher: Harmony, Books Count: 2, URL: https://www.aseeralkotb.com/ar/publishers/Harmony
+Publisher: G.P.Putnam's Sons Books for Young Readers, Books Count: 3, URL: https://www.aseeralkotb.com/ar/publishers/G.P.Putnam%27s-Sons-Books-for-Young-Readers
+Publisher: Merky Books, Books Count: 3, URL: https://www.aseeralkotb.com/ar/publishers/Merky-Books
+Publisher: Penguin Random House, Books Count: 41, URL: https://www.aseeralkotb.com/ar/publishers/Penguin-Random-House
+Publisher: Waterbrook Press, Books Count: 2, URL: https://www.aseeralkotb.com/ar/publishers/Waterbrook-Press
+Publisher: Canongate Books, Books Count: 10, URL: https://www.aseeralkotb.com/ar/publishers/Canongate-Books
+Publisher: David Fickling Books, Books Count: 1, URL: https://www.aseeralkotb.com/ar/publishers/David-Fickling-Books
+Publisher: VIZ Media LLC, Books Count: 114, URL: https://www.aseeralkotb.com/ar/publishers/VIZ-Media-LLC
+Publisher: Seven Seas, Books Count: 4, URL: https://www.aseeralkotb.com/ar/publishers/Seven-Seas
+Publisher: Page Publications, Books Count: 73, URL: https://www.aseeralkotb.com/ar/publishers/Page-Publications
+Publisher: SCHOLASTIC INC, Books Count: 52, URL: https://www.aseeralkotb.com/ar/publishers/SCHOLASTIC-INC
+Publisher: Little Simon, Books Count: 30, URL: https://www.aseeralkotb.com/ar/publishers/Little-Simon
+Publisher: William Morrow Paperbacks, Books Count: 9, URL: https://www.aseeralkotb.com/ar/publishers/William-Morrow-Paperbacks
+Publisher: Aseer Alkotb Classic, Books Count: 111, URL: https://www.aseeralkotb.com/ar/publishers/Aseer-Alkotb-Classic
+Publisher: سبارك للنشر والتوزيع, Books Count: 83, URL: https://www.aseeralkotb.com/ar/publishers/%D8%B3%D8%A8%D8%A7%D8%B1%D9%83-%D9%84%D9%84%D9%86%D8%B4%D8%B1-%D9%88%D8%A7%D9%84%D8%AA%D9%88%D8%B2%D9%8A%D8%B9
+Publisher: منشورات الفنار, Books Count: 140, URL: https://www.aseeralkotb.com/ar/publishers/%D9%85%D9%86%D8%B4%D9%88%D8%B1%D8%A7%D8%AA-%D8%A7%D9%84%D9%81%D9%86%D8%A7%D8%B1
+Publisher: وزيز للنشر والتوزيع, Books Count: 11, URL: https://www.aseeralkotb.com/ar/publishers/%D9%88%D8%B2%D9%8A%D8%B2-%D9%84%D9%84%D9%86%D8%B4%D8%B1-%D9%88%D8%A7%D9%84%D8%AA%D9%88%D8%B2%D9%8A%D8%B9
+Publisher: جليس للنشر, Books Count: 67, URL: https://www.aseeralkotb.com/ar/publishers/%D8%AC%D9%84%D9%8A%D8%B3-%D9%84%D9%84%D9%86%D8%B4%D8%B1
+Publisher: نيسان للنشر والتوزيع, Books Count: 113, URL: https://www.aseeralkotb.com/ar/publishers/%D9%86%D9%8A%D8%B3%D8%A7%D9%86-%D9%84%D9%84%D9%86%D8%B4%D8%B1-%D9%88%D8%A7%D9%84%D8%AA%D9%88%D8%B2%D9%8A%D8%B9
+Publisher: أدب  للنشر, Books Count: 27, URL: https://www.aseeralkotb.com/ar/publishers/%D8%A3%D8%AF%D8%A8--%D9%84%D9%84%D9%86%D8%B4%D8%B1
+Publisher: دار مرح لكتب الأطفال, Books Count: 21, URL: https://www.aseeralkotb.com/ar/publishers/%D8%AF%D8%A7%D8%B1-%D9%85%D8%B1%D8%AD-%D9%84%D9%83%D8%AA%D8%A8-%D8%A7%D9%84%D8%A3%D8%B7%D9%81%D8%A7%D9%84
+Publisher: جدل للنشر, Books Count: 104, URL: https://www.aseeralkotb.com/ar/publishers/%D8%AC%D8%AF%D9%84-%D9%84%D9%84%D9%86%D8%B4%D8%B1
+Publisher: المحرر للنشر والتوزيع, Books Count: 123, URL: https://www.aseeralkotb.com/ar/publishers/%D8%A7%D9%84%D9%85%D8%AD%D8%B1%D8%B1-%D9%84%D9%84%D9%86%D8%B4%D8%B1-%D9%88%D8%A7%D9%84%D8%AA%D9%88%D8%B2%D9%8A%D8%B9
+Publisher: يتخيلون للنشر والتوزيع, Books Count: 100, URL: https://www.aseeralkotb.com/ar/publishers/%D9%8A%D8%AA%D8%AE%D9%8A%D9%84%D9%88%D9%86-%D9%84%D9%84%D9%86%D8%B4%D8%B1-%D9%88%D8%A7%D9%84%D8%AA%D9%88%D8%B2%D9%8A%D8%B9
+Publisher: منطاد للنشر والتوزيع, Books Count: 40, URL: https://www.aseeralkotb.com/ar/publishers/%D9%85%D9%86%D8%B7%D8%A7%D8%AF-%D9%84%D9%84%D9%86%D8%B4%D8%B1-%D9%88%D8%A7%D9%84%D8%AA%D9%88%D8%B2%D9%8A%D8%B9
+Publisher: أهم 5000 جُملة, Books Count: 1, URL: https://www.aseeralkotb.com/ar/publishers/%D8%A3%D9%87%D9%85-5000-%D8%AC%D9%8F%D9%85%D9%84%D8%A9
+Publisher: التوفيقية للتراث, Books Count: 31, URL: https://www.aseeralkotb.com/ar/publishers/%D8%A7%D9%84%D8%AA%D9%88%D9%81%D9%8A%D9%82%D9%8A%D8%A9-%D9%84%D9%84%D8%AA%D8%B1%D8%A7%D8%AB
+Publisher: دار الصفا للتراث, Books Count: 45, URL: https://www.aseeralkotb.com/ar/publishers/%D8%AF%D8%A7%D8%B1-%D8%A7%D9%84%D8%B5%D9%81%D8%A7-%D9%84%D9%84%D8%AA%D8%B1%D8%A7%D8%AB
+Publisher: دار الهلال, Books Count: 104, URL: https://www.aseeralkotb.com/ar/publishers/%D8%AF%D8%A7%D8%B1-%D8%A7%D9%84%D9%87%D9%84%D8%A7%D9%84
+Publisher: المستقبل للتعليم الالكتروني والمطبوع, Books Count: 155, URL: https://www.aseeralkotb.com/ar/publishers/%D8%A7%D9%84%D9%85%D8%B3%D8%AA%D9%82%D8%A8%D9%84-%D9%84%D9%84%D8%AA%D8%B9%D9%84%D9%8A%D9%85-%D8%A7%D9%84%D8%A7%D9%84%D9%83%D8%AA%D8%B1%D9%88%D9%86%D9%8A-%D9%88%D8%A7%D9%84%D9%85%D8%B7%D8%A8%D9%88%D8%B9
+Publisher: مسافات للترجمة والنشر والتوزيع, Books Count: 73, URL: https://www.aseeralkotb.com/ar/publishers/%D9%85%D8%B3%D8%A7%D9%81%D8%A7%D8%AA-%D9%84%D9%84%D8%AA%D8%B1%D8%AC%D9%85%D8%A9-%D9%88%D8%A7%D9%84%D9%86%D8%B4%D8%B1-%D9%88%D8%A7%D9%84%D8%AA%D9%88%D8%B2%D9%8A%D8%B9
+Publisher: أطياف للنشر والتوزيع, Books Count: 13, URL: https://www.aseeralkotb.com/ar/publishers/%D8%A3%D8%B7%D9%8A%D8%A7%D9%81-%D9%84%D9%84%D9%86%D8%B4%D8%B1-%D9%88%D8%A7%D9%84%D8%AA%D9%88%D8%B2%D9%8A%D8%B9
+Publisher: John Murray Press, Books Count: 38, URL: https://www.aseeralkotb.com/ar/publishers/John-Murray-Press
+Publisher: Orion Books, Books Count: 13, URL: https://www.aseeralkotb.com/ar/publishers/Orion-Books
+Publisher: Abacus, Books Count: 12, URL: https://www.aseeralkotb.com/ar/publishers/Abacus
+Publisher: Allen & Unwin, Books Count: 2, URL: https://www.aseeralkotb.com/ar/publishers/Allen-%26-Unwin
+Publisher: Wilco Publishing House, Books Count: 33, URL: https://www.aseeralkotb.com/ar/publishers/Wilco-Publishing-House
+Publisher: Herron Book Distributors, Books Count: 1, URL: https://www.aseeralkotb.com/ar/publishers/Herron-Book-Distributors
+Publisher: Michael O'Mara Books, Books Count: 18, URL: https://www.aseeralkotb.com/ar/publishers/Michael-O%27Mara-Books
+Publisher: Gollancz, Books Count: 32, URL: https://www.aseeralkotb.com/ar/publishers/Gollancz
+Publisher: Little, Brown Book Group, Books Count: 50, URL: https://www.aseeralkotb.com/ar/publishers/Little%2C-Brown-Book-Group
+Publisher: Sceptre, Books Count: 13, URL: https://www.aseeralkotb.com/ar/publishers/Sceptre
+Publisher: Nicholas Brealey Publishing, Books Count: 18, URL: https://www.aseeralkotb.com/ar/publishers/Nicholas-Brealey-Publishing
+Publisher: Tinder Press, Books Count: 10, URL: https://www.aseeralkotb.com/ar/publishers/Tinder-Press
+Publisher: ORCHARD, Books Count: 41, URL: https://www.aseeralkotb.com/ar/publishers/ORCHARD
+Publisher: Hutchinson Heinemann, Books Count: 9, URL: https://www.aseeralkotb.com/ar/publishers/Hutchinson-Heinemann
+Publisher: AutumnPublishing, Books Count: 81, URL: https://www.aseeralkotb.com/ar/publishers/AutumnPublishing
+Publisher: Washington Square Press, Books Count: 2, URL: https://www.aseeralkotb.com/ar/publishers/Washington-Square-Press
+Publisher: Alison Green Books, Books Count: 4, URL: https://www.aseeralkotb.com/ar/publishers/Alison-Green-Books
+Publisher: GARDNERS VI BOOKS, Books Count: 6, URL: https://www.aseeralkotb.com/ar/publishers/GARDNERS-VI-BOOKS
+Publisher: دار السيف للنشر والتوزيع, Books Count: 13, URL: https://www.aseeralkotb.com/ar/publishers/%D8%AF%D8%A7%D8%B1-%D8%A7%D9%84%D8%B3%D9%8A%D9%81-%D9%84%D9%84%D9%86%D8%B4%D8%B1-%D9%88%D8%A7%D9%84%D8%AA%D9%88%D8%B2%D9%8A%D8%B9
+Publisher: مؤسسة كلمة, Books Count: 374, URL: https://www.aseeralkotb.com/ar/publishers/%D9%85%D8%A4%D8%B3%D8%B3%D8%A9-%D9%83%D9%84%D9%85%D8%A9
+Publisher: William Collins, Books Count: 5, URL: https://www.aseeralkotb.com/ar/publishers/William-Collins
+Publisher: Miles Kelly Publishing Ltd, Books Count: 5, URL: https://www.aseeralkotb.com/ar/publishers/Miles-Kelly-Publishing-Ltd
+Publisher: Hinkler, Books Count: 7, URL: https://www.aseeralkotb.com/ar/publishers/Hinkler

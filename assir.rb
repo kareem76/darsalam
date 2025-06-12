@@ -1,0 +1,141 @@
+require 'capybara'
+require 'capybara/dsl'
+require 'selenium-webdriver'
+require 'nokogiri'
+require 'json'
+
+# Setup Capybara with headless Firefox
+Capybara.register_driver :selenium_firefox do |app|
+  options = Selenium::WebDriver::Firefox::Options.new
+  options.add_argument('--headless')
+  Capybara::Selenium::Driver.new(app, browser: :firefox, options: options)
+end
+
+Capybara.default_driver = :selenium_firefox
+Capybara.default_max_wait_time = 10
+
+class AseerAlKotbScraper
+  include Capybara::DSL
+
+  BASE_URL = "https://www.aseeralkotb.com"
+
+  def initialize
+    @book_links = []
+  end
+
+ def scrape_all_book_links(publisher_url)
+  visit publisher_url
+  sleep 2
+
+  page_links = {}
+
+  loop do
+    current = current_url
+    puts "Scraping book links from page: #{current}"
+
+    links = all('a[href*="/ar/books/"]').map { |a| URI.join(BASE_URL, a[:href]).to_s }.uniq
+    page_links[current] = links
+
+    if has_css?('button[rel="next"]', wait: 5)
+  find('button[rel="next"]').click
+elsif has_css?('a[rel="next"]', wait: 1)
+  find('a[rel="next"]').click
+else
+  break
+end
+sleep 2
+
+  end
+
+  page_links
+end
+
+
+  def scrape_book_details(book_url)
+    visit book_url
+    sleep 2
+
+    doc = Nokogiri::HTML(page.html)
+
+    title = doc.at_css('h1[itemprop="name"]')&.text&.strip || "N/A"
+    image_url = doc.at_css('img[itemprop="contentUrl"]')&.[]('src') || "N/A"
+    json_ld = doc.at('script[type="application/ld+json"]')&.text
+    summary = json_ld ? (JSON.parse(json_ld)["description"] rescue "N/A") : "N/A"
+    authors = doc.css('dt:contains("المؤلفون") + dd a').map(&:text).map(&:strip).join(', ')
+    year = doc.at_css('dt:contains("سنة النشر") + dd')&.text&.strip || "N/A"
+    publisher = doc.at_css('dt:contains("دار النشر") + dd span[itemprop="name"]')&.text&.strip || "N/A"
+    genre = doc.at_css('dt:contains("الأقسام") + dd')&.text&.strip || "N/A"
+    isbn = doc.at_css('dt:contains("ISBN") + dd')&.text&.strip || "N/A"
+    price = doc.at_css('dt:contains("قبل:") + dd span')&.text&.strip || "N/A"
+
+    {
+      title: title,
+      image_url: image_url,
+      summary: summary,
+      authors: authors,
+      year: year,
+      publisher: publisher,
+      genre: genre,
+      isbn: isbn,
+      price: price,
+      book_link: book_url
+    }
+  end
+end
+
+# === Main script ===
+
+input_file = ARGV[0] || 'list.txt'
+output_file = ARGV[1] || 'results.json'
+
+scraper = AseerAlKotbScraper.new
+scraped_urls = []
+first_item = true
+
+# Open file and write opening bracket
+json_file = File.open(output_file, "w:utf-8")
+json_file.write("[\n")
+
+# Ensure JSON array closes properly on exit
+at_exit do
+  json_file.write("\n]\n")
+  json_file.close
+  puts "Saved results to #{output_file}"
+end
+
+File.readlines(input_file).each do |line|
+  publisher_name = line[/Publisher:\s*(.*?),/, 1]&.strip || "N/A"
+  url = line[/URL:\s*(https:\/\/[^\s]+)/, 1]
+  next unless url
+
+  puts "Scraping: #{publisher_name}"
+
+  begin
+    book_links = scraper.scrape_all_book_links(url)
+
+book_links.each do |page_url, urls|
+  puts "Scraping book links from page: #{page_url}"
+
+  urls.each do |book_url|
+    next if scraped_urls.include?(book_url)
+
+    begin
+      details = scraper.scrape_book_details(book_url)
+      scraped_urls << book_url
+
+      json_file.write(",\n") unless first_item
+      json_file.write(JSON.pretty_generate(details))
+      json_file.flush
+      first_item = false
+
+      puts "Scraped: #{details[:title]}"
+    rescue => e
+      warn "Failed to scrape book: #{book_url} (#{e.message})"
+    end
+  end
+end
+
+  rescue => e
+    warn "Failed publisher #{publisher_name}: #{e.message}"
+  end
+end

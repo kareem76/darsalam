@@ -4,20 +4,14 @@ require 'selenium-webdriver'
 require 'nokogiri'
 require 'json'
 
-# Force immediate output to stdout (helps with GitHub Actions logs)
-$stdout.sync = true
-
-Capybara.register_driver :chrome do |app|
-  options = Selenium::WebDriver::Chrome::Options.new
+# Setup Capybara with headless Firefox
+Capybara.register_driver :selenium_firefox do |app|
+  options = Selenium::WebDriver::Firefox::Options.new
   options.add_argument('--headless')
-  options.add_argument('--disable-gpu')
-  options.add_argument('--no-sandbox')
-  options.add_argument('--disable-dev-shm-usage')
-
-  Capybara::Selenium::Driver.new(app, browser: :chrome, options: options)
+  Capybara::Selenium::Driver.new(app, browser: :firefox, options: options)
 end
 
-Capybara.default_driver = :chrome
+Capybara.default_driver = :selenium_firefox
 Capybara.default_max_wait_time = 10
 
 class AseerAlKotbScraper
@@ -29,56 +23,31 @@ class AseerAlKotbScraper
     @book_links = []
   end
 
-  def scrape_all_book_links(publisher_url)
+ def scrape_all_book_links(publisher_url)
   visit publisher_url
   sleep 2
 
   page_links = {}
-  seen_urls = Set.new
-  previous_count = 0
-  attempts = 0
 
   loop do
     current = current_url
+    puts "Scraping book links from page: #{current}"
 
     links = all('a[href*="/ar/books/"]').map { |a| URI.join(BASE_URL, a[:href]).to_s }.uniq
-    new_links = links - seen_urls.to_a
+    page_links[current] = links
+if has_css?('button[rel="next"]', wait: 5)
+  find('button[rel="next"]').click
+elsif has_css?('a[rel="next"]', wait: 1)
+  find('a[rel="next"]').click
+else
+  break
+end
+sleep 2
 
-    page_links[current] = new_links
-    seen_urls.merge(new_links)
-
-    puts "Scraping book links from page: #{current} — found #{new_links.size} new links"
-
-    begin
-      if has_button?(nil, wait: 5, visible: :all)
-        button = find('button[wire\\:click*="nextPage"]', visible: :all)
-
-        # Scroll to button to trigger lazy load
-        execute_script("arguments[0].scrollIntoView(true);", button)
-        button.click
-
-        sleep 3
-
-        # Check if new books loaded, if not, break loop
-        current_count = all('a[href*="/ar/books/"]').count
-        break if current_count == previous_count
-
-        previous_count = current_count
-        attempts = 0
-      else
-        puts "No next button found — pagination complete."
-        break
-      end
-    rescue => e
-      attempts += 1
-      puts "Next button error: #{e.message} (attempt #{attempts})"
-      break if attempts >= 3
-    end
   end
 
   page_links
 end
-
 
 
   def scrape_book_details(book_url)
@@ -115,15 +84,12 @@ end
 
 # === Main script ===
 
-input_file = ARGV[0] || 'file.txt'
-output_file = ARGV[1] || "results/#{File.basename(input_file, '.txt')}.json"
+input_file = ARGV[0] || 'list.txt'
+output_file = ARGV[1] || 'results.json'
 
 scraper = AseerAlKotbScraper.new
 scraped_urls = []
 first_item = true
-
-# Prepare output directory
-Dir.mkdir('results') unless Dir.exist?('results')
 
 # Open file and write opening bracket
 json_file = File.open(output_file, "w:utf-8")
@@ -146,27 +112,27 @@ File.readlines(input_file).each do |line|
   begin
     book_links = scraper.scrape_all_book_links(url)
 
-    book_links.each do |page_url, urls|
-      puts "Scraping book links from page: #{page_url}"
+book_links.each do |page_url, urls|
+  puts "Scraping book links from page: #{page_url}"
 
-      urls.each do |book_url|
-        next if scraped_urls.include?(book_url)
+  urls.each do |book_url|
+    next if scraped_urls.include?(book_url)
 
-        begin
-          details = scraper.scrape_book_details(book_url)
-          scraped_urls << book_url
+    begin
+      details = scraper.scrape_book_details(book_url)
+      scraped_urls << book_url
 
-          json_file.write(",\n") unless first_item
-          json_file.write(JSON.pretty_generate(details))
-          json_file.flush
-          first_item = false
+      json_file.write(",\n") unless first_item
+      json_file.write(JSON.pretty_generate(details))
+      json_file.flush
+      first_item = false
 
-          puts "Scraped: #{details[:title]}"
-        rescue => e
-          warn "Failed to scrape book: #{book_url} (#{e.message})"
-        end
-      end
+      puts "Scraped: #{details[:title]}"
+    rescue => e
+      warn "Failed to scrape book: #{book_url} (#{e.message})"
     end
+  end
+end
 
   rescue => e
     warn "Failed publisher #{publisher_name}: #{e.message}"

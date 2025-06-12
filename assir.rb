@@ -22,7 +22,7 @@ def new_capybara_session_with_unique_profile
 end
 
 class AseerAlKotbScraper
-  include Capybara::DSL
+ 
 
   BASE_URL = "https://www.aseeralkotb.com"
 

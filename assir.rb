@@ -23,6 +23,7 @@ class AseerAlKotbScraper
 
   BASE_URL = "https://www.aseeralkotb.com"
 
+
   def initialize
     @book_links = []
   end
@@ -36,6 +37,7 @@ class AseerAlKotbScraper
     puts "Scraping book links from page: #{paginated_url}"
 
     visit paginated_url
+    puts page.html 
     if has_css?('a[href*="/ar/books/"]', wait: 5)
       links = all('a[href*="/ar/books/"]', visible: true).map do |a|
         href = a[:href]

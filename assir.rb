@@ -4,15 +4,21 @@ require 'selenium-webdriver'
 require 'nokogiri'
 require 'json'
 $stdout.sync = true
-# Setup Capybara with headless Firefox
-Capybara.register_driver :selenium_firefox do |app|
-  options = Selenium::WebDriver::Firefox::Options.new
+Capybara.register_driver :chrome do |app|
+  options = Selenium::WebDriver::Chrome::Options.new
   options.add_argument('--headless')
-  Capybara::Selenium::Driver.new(app, browser: :firefox, options: options)
+  options.add_argument('--disable-gpu')
+  options.add_argument('--no-sandbox')
+  options.add_argument('--disable-dev-shm-usage')
+
+  Capybara::Selenium::Driver.new(app, browser: :chrome, options: options)
 end
 
-Capybara.default_driver = :selenium_firefox
-Capybara.default_max_wait_time = 10
+Capybara.default_driver = :chrome
+Capybara.default_max_wait_time = 20
+
+
+
 
 class AseerAlKotbScraper
   include Capybara::DSL

@@ -51,14 +51,14 @@ class AssirScraper
     }
   end
 end
-
-if ARGV.length != 3
+if ARGV.length != 2
   puts "Usage: ruby assir.rb file.txt output.json"
   exit
 end
 
-input_file = ARGV[1]
-output_file = ARGV[2]
+input_file = ARGV[0]
+output_file = ARGV[1]
+
 
 scraper = AssirScraper.new
 results = []

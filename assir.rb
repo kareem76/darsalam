@@ -4,6 +4,9 @@ require 'selenium-webdriver'
 require 'nokogiri'
 require 'json'
 
+# Force immediate output to stdout (helps with GitHub Actions logs)
+$stdout.sync = true
+
 Capybara.register_driver :chrome do |app|
   options = Selenium::WebDriver::Chrome::Options.new
   options.add_argument('--headless')
@@ -17,9 +20,6 @@ end
 Capybara.default_driver = :chrome
 Capybara.default_max_wait_time = 10
 
-include Capybara::DSL
-
-
 class AseerAlKotbScraper
   include Capybara::DSL
 
@@ -29,33 +29,32 @@ class AseerAlKotbScraper
     @book_links = []
   end
 
- def scrape_all_book_links(publisher_url)
-  visit publisher_url
-  sleep 2
+  def scrape_all_book_links(publisher_url)
+    visit publisher_url
+    sleep 2
 
-  page_links = {}
+    page_links = {}
 
-  loop do
-    current = current_url
-    #puts "Scraping book links from page: #{current}"
+    loop do
+      current = current_url
+      puts "Scraping book links from page: #{current}"
 
-    links = all('a[href*="/ar/books/"]').map { |a| URI.join(BASE_URL, a[:href]).to_s }.uniq
-    page_links[current] = links
+      links = all('a[href*="/ar/books/"]').map { |a| URI.join(BASE_URL, a[:href]).to_s }.uniq
+      page_links[current] = links
 
-    if has_css?('button[rel="next"]', wait: 5)
-  find('button[rel="next"]').click
-elsif has_css?('a[rel="next"]', wait: 1)
-  find('a[rel="next"]').click
-else
-  break
-end
-sleep 2
+      if has_css?('button[rel="next"]', wait: 5)
+        find('button[rel="next"]').click
+      elsif has_css?('a[rel="next"]', wait: 1)
+        find('a[rel="next"]').click
+      else
+        break
+      end
 
+      sleep 2
+    end
+
+    page_links
   end
-
-  page_links
-end
-
 
   def scrape_book_details(book_url)
     visit book_url
@@ -92,13 +91,14 @@ end
 # === Main script ===
 
 input_file = ARGV[0] || 'file.txt'
-
-# If ARGV[1] is given, use it; otherwise, generate based on input_file name
 output_file = ARGV[1] || "results/#{File.basename(input_file, '.txt')}.json"
 
 scraper = AseerAlKotbScraper.new
 scraped_urls = []
 first_item = true
+
+# Prepare output directory
+Dir.mkdir('results') unless Dir.exist?('results')
 
 # Open file and write opening bracket
 json_file = File.open(output_file, "w:utf-8")
@@ -121,27 +121,27 @@ File.readlines(input_file).each do |line|
   begin
     book_links = scraper.scrape_all_book_links(url)
 
-book_links.each do |page_url, urls|
-  puts "Scraping book links from page: #{page_url}"
+    book_links.each do |page_url, urls|
+      puts "Scraping book links from page: #{page_url}"
 
-  urls.each do |book_url|
-    next if scraped_urls.include?(book_url)
+      urls.each do |book_url|
+        next if scraped_urls.include?(book_url)
 
-    begin
-      details = scraper.scrape_book_details(book_url)
-      scraped_urls << book_url
+        begin
+          details = scraper.scrape_book_details(book_url)
+          scraped_urls << book_url
 
-      json_file.write(",\n") unless first_item
-      json_file.write(JSON.pretty_generate(details))
-      json_file.flush
-      first_item = false
+          json_file.write(",\n") unless first_item
+          json_file.write(JSON.pretty_generate(details))
+          json_file.flush
+          first_item = false
 
-      puts "Scraped: #{details[:title]}"
-    rescue => e
-      warn "Failed to scrape book: #{book_url} (#{e.message})"
+          puts "Scraped: #{details[:title]}"
+        rescue => e
+          warn "Failed to scrape book: #{book_url} (#{e.message})"
+        end
+      end
     end
-  end
-end
 
   rescue => e
     warn "Failed publisher #{publisher_name}: #{e.message}"

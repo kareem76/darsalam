@@ -7,16 +7,24 @@ $stdout.sync = true
 
 Capybara.register_driver :chrome do |app|
   options = Selenium::WebDriver::Chrome::Options.new
-  options.add_argument('--headless')
-  options.add_argument('--disable-gpu')
+  
+  # Comment out or remove headless to see browser window:
+  # options.add_argument('--headless')
+  # options.add_argument('--disable-gpu')
+  
   options.add_argument('--no-sandbox')
   options.add_argument('--disable-dev-shm-usage')
+  
+  # Optional: add a user-agent to mimic real browser
+  options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) "\
+                       "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36")
 
   Capybara::Selenium::Driver.new(app, browser: :chrome, options: options)
 end
 
 Capybara.default_driver = :chrome
 Capybara.default_max_wait_time = 20
+
 
 class AseerAlKotbScraper
   include Capybara::DSL

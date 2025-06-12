@@ -114,7 +114,7 @@ File.readlines(input_file).each do |line|
     book_links = scraper.scrape_all_book_links(url)
 
 book_links.each do |page_url, urls|
-  #puts "Scraping book links from page: #{page_url}"
+  puts "Scraping book links from page: #{page_url}"
 
   urls.each do |book_url|
     next if scraped_urls.include?(book_url)
@@ -128,7 +128,7 @@ book_links.each do |page_url, urls|
       json_file.flush
       first_item = false
 
-      #puts "Scraped: #{details[:title]}"
+      puts "Scraped: #{details[:title]}"
     rescue => e
       warn "Failed to scrape book: #{book_url} (#{e.message})"
     end

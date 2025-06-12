@@ -145,7 +145,7 @@ book_links.each do |page_url, urls|
 
       puts "Scraped: #{details[:title]}"
     rescue => e
-      warn "Failed to scrape book: #{book_url} (#{e.message})"
+      warn "Fail to scrape book: #{book_url} (#{e.message})"
     end
   end
 end

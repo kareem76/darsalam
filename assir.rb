@@ -1,157 +1,92 @@
 require 'capybara'
 require 'capybara/dsl'
 require 'selenium-webdriver'
-require 'nokogiri'
 require 'json'
-$stdout.sync = true
-Capybara.register_driver :chrome do |app|
-  options = Selenium::WebDriver::Chrome::Options.new
-  options.add_argument('--headless')
-  options.add_argument('--disable-gpu')
-  options.add_argument('--no-sandbox')
-  options.add_argument('--disable-dev-shm-usage')
+require 'uri'
 
-  Capybara::Selenium::Driver.new(app, browser: :chrome, options: options)
+Capybara.default_driver = :selenium
+Capybara.default_max_wait_time = 10
+
+Capybara.register_driver :selenium do |app|
+  Capybara::Selenium::Driver.new(app, browser: :firefox)
 end
 
-Capybara.default_driver = :chrome
-Capybara.default_max_wait_time = 20
-
-
-
-
-class AseerAlKotbScraper
+class AssirScraper
   include Capybara::DSL
 
   BASE_URL = "https://www.aseeralkotb.com"
 
-  def initialize
-    @book_links = []
-  end
+  def scrape_all_book_links(publisher_url, book_count)
+    total_pages = (book_count / 24.0).ceil
+    all_links = []
 
- def scrape_all_book_links(publisher_url)
-  visit publisher_url
-  sleep 2
+    (1..total_pages).each do |page_number|
+      paginated_url = "#{publisher_url}?books=#{page_number}"
+      puts "Scraping book links from page: #{paginated_url}"
 
-  page_links = {}
-
-  loop do
-    current = current_url
-    puts "Scraping book links from page: #{current}"
-
-    links = all('a[href*="/ar/books/"]').map { |a| URI.join(BASE_URL, a[:href]).to_s }.uniq
-    page_links[current] = links
-
-    # Scroll down gradually to try to reveal the next button
-    5.times do
-      execute_script("window.scrollBy(0, window.innerHeight);")
+      visit paginated_url
       sleep 1
-      break if has_css?('button[rel="next"]', visible: true, wait: 1) ||
-               has_css?('a[rel="next"]', visible: true, wait: 1)
+
+      links = all('a[href*="/ar/books/"]').map { |a| URI.join(BASE_URL, a[:href]).to_s }.uniq
+      all_links.concat(links)
+
+      puts "  Found #{links.size} books on this page"
     end
 
-    if has_css?('button[rel="next"]', visible: true, wait: 5)
-      find('button[rel="next"]').click
-    elsif has_css?('a[rel="next"]', visible: true, wait: 5)
-      find('a[rel="next"]').click
-    else
-      puts "No next button found — pagination complete."
-      break
-    end
-
-    sleep 2
+    all_links.uniq
   end
-
-  page_links  # <= make sure you return this
-end  # <<=== THIS was missing!
-
-
 
   def scrape_book_details(book_url)
     visit book_url
-    sleep 2
-
-    doc = Nokogiri::HTML(page.html)
-
-    title = doc.at_css('h1[itemprop="name"]')&.text&.strip || "N/A"
-    image_url = doc.at_css('img[itemprop="contentUrl"]')&.[]('src') || "N/A"
-    json_ld = doc.at('script[type="application/ld+json"]')&.text
-    summary = json_ld ? (JSON.parse(json_ld)["description"] rescue "N/A") : "N/A"
-    authors = doc.css('dt:contains("المؤلفون") + dd a').map(&:text).map(&:strip).join(', ')
-    year = doc.at_css('dt:contains("سنة النشر") + dd')&.text&.strip || "N/A"
-    publisher = doc.at_css('dt:contains("دار النشر") + dd span[itemprop="name"]')&.text&.strip || "N/A"
-    genre = doc.at_css('dt:contains("الأقسام") + dd')&.text&.strip || "N/A"
-    isbn = doc.at_css('dt:contains("ISBN") + dd')&.text&.strip || "N/A"
-    price = doc.at_css('dt:contains("قبل:") + dd span')&.text&.strip || "N/A"
+    sleep 1
 
     {
-      title: title,
-      image_url: image_url,
-      summary: summary,
-      authors: authors,
-      year: year,
-      publisher: publisher,
-      genre: genre,
-      isbn: isbn,
-      price: price,
-      book_link: book_url
+      title: find('h1', match: :first).text rescue nil,
+      author: find('a[href*="/ar/authors/"]', match: :first).text rescue nil,
+      publisher: find('a[href*="/ar/publishers/"]', match: :first).text rescue nil,
+      category: find('a[href*="/ar/categories/"]', match: :first).text rescue nil,
+      summary: find('div#Book_intro div.ng-binding', wait: 2).text.strip rescue nil,
+      image: find('img.book-cover')[:src] rescue nil,
+      url: book_url
     }
   end
 end
 
-# === Main script ===
-
-input_file = ARGV[0] || 'list.txt'
-output_file = ARGV[1] || 'results.json'
-
-scraper = AseerAlKotbScraper.new
-scraped_urls = []
-first_item = true
-
-# Open file and write opening bracket
-json_file = File.open(output_file, "w:utf-8")
-json_file.write("[\n")
-
-# Ensure JSON array closes properly on exit
-at_exit do
-  json_file.write("\n]\n")
-  json_file.close
-  puts "Saved results to #{output_file}"
+if ARGV.length != 3
+  puts "Usage: ruby assir.rb file.txt output.json"
+  exit
 end
+
+input_file = ARGV[1]
+output_file = ARGV[2]
+
+scraper = AssirScraper.new
+results = []
 
 File.readlines(input_file).each do |line|
-  publisher_name = line[/Publisher:\s*(.*?),/, 1]&.strip || "N/A"
-  url = line[/URL:\s*(https:\/\/[^\s]+)/, 1]
-  next unless url
+  next unless line.include?('Publisher:')
 
-  puts "Scraping: #{publisher_name}"
+  publisher_name = line[/Publisher:\s*(.*?),/, 1]&.strip
+  book_count = line[/Books Count:\s*(\d+)/, 1]&.to_i
+  publisher_url = line[/URL:\s*(https?:\/\/\S+)/, 1]&.strip
 
+  next unless publisher_name && book_count && publisher_url
+
+  puts "\nScraping: #{publisher_name} (#{book_count} books)"
   begin
-    book_links = scraper.scrape_all_book_links(url)
+    book_links = scraper.scrape_all_book_links(publisher_url, book_count)
+    puts "  Total book links: #{book_links.size}"
 
-book_links.each do |page_url, urls|
-  puts "Scraping book links from page: #{page_url}"
-
-  urls.each do |book_url|
-    next if scraped_urls.include?(book_url)
-
-    begin
-      details = scraper.scrape_book_details(book_url)
-      scraped_urls << book_url
-
-      json_file.write(",\n") unless first_item
-      json_file.write(JSON.pretty_generate(details))
-      json_file.flush
-      first_item = false
-
-      puts "Scraped: #{details[:title]}"
-    rescue => e
-      warn "Failed to scrape book: #{book_url} (#{e.message})"
+    book_links.each_with_index do |book_url, idx|
+      puts "  (#{idx + 1}/#{book_links.size}) #{book_url}"
+      book_data = scraper.scrape_book_details(book_url)
+      book_data[:publisher] = publisher_name
+      results << book_data
     end
+  rescue => e
+    puts "  Error scraping #{publisher_name}: #{e.message}"
   end
 end
 
-  rescue => e
-    warn "Failed publisher #{publisher_name}: #{e.message}"
-  end
-end
+File.write(output_file, JSON.pretty_generate(results))
+puts "\nDone! Saved #{results.size} books to #{output_file}"

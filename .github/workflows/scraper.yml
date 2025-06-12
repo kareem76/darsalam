@@ -37,14 +37,16 @@ jobs:
 
       - name: Run Scraper
         run: |
+          base=$(basename "${{ matrix.chunk }}" .txt)
           mkdir -p results
-          ruby assir.rb ${{ matrix.chunk }}
+          ruby assir.rb "${{ matrix.chunk }}"
+          mv results.json results/$base.json
 
       - name: Upload result
         uses: actions/upload-artifact@v4
         with:
           name: results-${{ matrix.chunk }}
-          path: results/$(basename "${{ matrix.chunk}" .txt).json
+          path: results/$(basename "${{ matrix.chunk }}" .txt).json
 
   combine:
     runs-on: ubuntu-latest

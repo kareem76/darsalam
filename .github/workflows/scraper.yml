@@ -1,3 +1,4 @@
+
 name: Parallel Scraper
 
 on:
@@ -12,28 +13,39 @@ jobs:
   scrape:
     runs-on: ubuntu-latest
     strategy:
-      max-parallel: 1
       matrix:
-        chunk: [file1.txt]
+        pageRange:
+          - "2001-2200"
+          - "2201-2400"
+          - "2401-2600"
+          - "2601-2800"
+          - "2801-3000"
+          - "3001-3200"
+          - "3201-3400"
+          - "3401-3605"
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v3
 
-      - name: Set up Ruby
-        uses: ruby/setup-ruby@v1
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
         with:
-          ruby-version: 3.2
+          node-version: '18'
 
-      - name: Install system dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y google-chrome-stable
+      - name: Install dependencies
+        run: npm install playwright cheerio
 
-      - name: Install Ruby gems
+      - name: Run scraper on pages ${{ matrix.pageRange }}
+        env:
+          PAGE_RANGE: ${{ matrix.pageRange }}
         run: |
-          gem install bundler
-          bundle install || gem install capybara selenium-webdriver json nokogiri
+          IFS='-' read -r START_PAGE END_PAGE <<< "$PAGE_RANGE"
+          echo "Start page: $START_PAGE, End page: $END_PAGE"
 
-      - name: Run Scraper
-        run: |
-          ruby assir.rb ${{ matrix.chunk }} results.json
+          xvfb-run --auto-servernum --server-args='-screen 0 1024x768x24' node paly.js $START_PAGE $END_PAGE
+
+
+      - name: Upload scraped data artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: books-${{ matrix.pageRange }}
+          path: books_${{ matrix.pageRange }}.ndjson

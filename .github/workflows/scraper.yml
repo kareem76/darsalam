@@ -34,6 +34,9 @@ jobs:
       - name: Install dependencies
         run: npm install playwright cheerio
 
+      - name: Install browsers for Playwright
+        run: npx playwright install
+        
       - name: Run scraper on pages ${{ matrix.pageRange }}
         env:
           PAGE_RANGE: ${{ matrix.pageRange }}

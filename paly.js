@@ -11,8 +11,7 @@ const stream = fs.createWriteStream(filename, { flags: 'a' });
 const STREAM = fs.createWriteStream('books.ndjson', { flags: 'a' });
 const COOKIES_PATH = 'cookies.json';
 
-const START_PAGE = 2000;
-const END_PAGE = 3605;
+
 
 (async () => {
   const browser = await chromium.launch({ headless: false }); // use xvfb-run

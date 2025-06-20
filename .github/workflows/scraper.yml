@@ -1,4 +1,3 @@
-
 name: Parallel Scraper
 
 on:
@@ -14,41 +13,43 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        pageRange:
-          - "2001-2200"
-          - "2201-2400"
-          - "2401-2600"
-          - "2601-2800"
-          - "2801-3000"
-          - "3001-3200"
-          - "3201-3400"
-          - "3401-3605"
+        range:
+          - "1 60"
+          - "61 120"
+          - "121 180"
+          - "181 240"
+          - "241 300"
+          - "301 360"
+          - "361 420"
+          - "421 480"
+          - "481 540"
+          - "541 600"
+          - "601 660"
+
     steps:
       - uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
         with:
-          node-version: '18'
+          ruby-version: 3.2
 
       - name: Install dependencies
-        run: npm install playwright cheerio
-
-      - name: Install browsers for Playwright
-        run: npx playwright install
-        
-      - name: Run scraper on pages ${{ matrix.pageRange }}
-        env:
-          PAGE_RANGE: ${{ matrix.pageRange }}
         run: |
-          IFS='-' read -r START_PAGE END_PAGE <<< "$PAGE_RANGE"
-          echo "Start page: $START_PAGE, End page: $END_PAGE"
+          sudo apt-get update
+          sudo apt-get install -y chromium-driver
+          bundle install
 
-          xvfb-run --auto-servernum --server-args='-screen 0 1024x768x24' node paly.js $START_PAGE $END_PAGE
+      - name: Run scraper
+        env:
+          START_PAGE: ${{ matrix.range.split(' ')[0] }}
+          END_PAGE: ${{ matrix.range.split(' ')[1] }}
+        run: ruby shourouk_split.rb
 
-
-      - name: Upload scraped data artifact
+      - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: books-${{ matrix.pageRange }}
-          path: books_${{ matrix.pageRange }}.ndjson
+          name: books-${{ matrix.range }}
+          path: |
+            books_${{ matrix.range }}.csv
+            books_${{ matrix.range }}.json

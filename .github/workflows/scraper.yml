@@ -20,11 +20,9 @@ jobs:
           - { start: 181, end: 240 }
           - { start: 241, end: 300 }
           - { start: 301, end: 360 }
-          - { start: 361, end: 420 }
-          - { start: 421, end: 480 }
-          - { start: 481, end: 540 }
-          - { start: 541, end: 600 }
-          - { start: 601, end: 660 }
+          - { start: 361, end: 427 }
+          
+          
 
     steps:
       - uses: actions/checkout@v3

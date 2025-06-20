@@ -44,7 +44,7 @@ jobs:
         env:
           START_PAGE: ${{ matrix.range.start }}
           END_PAGE: ${{ matrix.range.end }}
-        run: ruby shourouk_split.rb
+        run: ruby salam.rb
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4

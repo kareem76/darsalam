@@ -14,20 +14,20 @@ jobs:
     strategy:
       matrix:
         range:
-          - "1 60"
-          - "61 120"
-          - "121 180"
-          - "181 240"
-          - "241 300"
-          - "301 360"
-          - "361 420"
-          - "421 480"
-          - "481 540"
-          - "541 600"
-          - "601 660"
+          - { start: 1, end: 60 }
+          - { start: 61, end: 120 }
+          - { start: 121, end: 180 }
+          - { start: 181, end: 240 }
+          - { start: 241, end: 300 }
+          - { start: 301, end: 360 }
+          - { start: 361, end: 420 }
+          - { start: 421, end: 480 }
+          - { start: 481, end: 540 }
+          - { start: 541, end: 600 }
+          - { start: 601, end: 660 }
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v3
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
@@ -42,14 +42,14 @@ jobs:
 
       - name: Run scraper
         env:
-          START_PAGE: ${{ matrix.range.split(' ')[0] }}
-          END_PAGE: ${{ matrix.range.split(' ')[1] }}
+          START_PAGE: ${{ matrix.range.start }}
+          END_PAGE: ${{ matrix.range.end }}
         run: ruby shourouk_split.rb
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: books-${{ matrix.range }}
+          name: books-${{ matrix.range.start }}-${{ matrix.range.end }}
           path: |
-            books_${{ matrix.range }}.csv
-            books_${{ matrix.range }}.json
+            books_${{ matrix.range.start }}_${{ matrix.range.end }}.csv
+            books_${{ matrix.range.start }}_${{ matrix.range.end }}.json

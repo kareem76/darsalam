@@ -17,10 +17,8 @@ jobs:
           - { start: 1, end: 60 }
           - { start: 61, end: 120 }
           - { start: 121, end: 180 }
-          - { start: 181, end: 240 }
-          - { start: 241, end: 300 }
-          - { start: 301, end: 360 }
-          - { start: 361, end: 427 }
+          - { start: 181, end: 227 }
+          
           
           
 

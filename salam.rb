@@ -44,7 +44,7 @@ end
 books = File.exist?(json_file_path) ? JSON.parse(File.read(json_file_path)) : []
 
 # Visit the main listing page
-visit('/books/english')
+visit('/books/kids')
 sleep 2
 
 # Navigate to the start page

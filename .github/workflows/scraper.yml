@@ -1,45 +1,52 @@
-name: Parallel Scraper
+name: asserBS
 
 on:
   push:
     branches:
-      - main
+      - asser
   pull_request:
     branches:
-      - main
+      - asser
 
 jobs:
   scrape:
     runs-on: ubuntu-latest
     strategy:
-      max-parallel: 5
       matrix:
-        chunk: [file34.txt, file35.txt, file36.txt, file37.txt, file38.txt, file39.txt, file40.txt, file41.txt, file42.txt, file43.txt ]  # You can add more like file2.txt, file3.txt
+        range:
+          - { start: 3001, end: 3100 }
+          - { start: 3101, end: 3200 }
+          - { start: 3201, end: 3300 }
+          - { start: 3301, end: 3400 }
+          - { start: 3401, end: 3500 }
+          - { start: 3501, end: 3605 }
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Set up Ruby
-        uses: ruby/setup-ruby@v1
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          ruby-version: 3.2
+          node-version: 20
 
-      - name: Install system dependencies
+      - name: Install dependencies
+        run: npm install playwright cheerio
+
+      - name: Install Chromium
+        run: npx playwright install chromium
+
+      - name: Run scraper with xvfb
+        env:
+          START_PAGE: ${{ matrix.range.start }}
+          END_PAGE: ${{ matrix.range.end }}
         run: |
           sudo apt-get update
-          sudo apt-get install -y google-chrome-stable
+          sudo apt-get install -y xvfb
+          xvfb-run --auto-servernum -- node aseer.js
 
-      - name: Install Ruby gems
-        run: |
-          gem install bundler
-          bundle install || gem install capybara selenium-webdriver json mechanize
-
-      - name: Run Scraper
-        run: ruby darsalam.rb ${{ matrix.chunk }}
-
-      - name: Upload JSON
+      - name: Upload output
         uses: actions/upload-artifact@v4
         with:
-          name: salam-${{ matrix.chunk }}
-          path: books-output-${{ matrix.chunk }}.json
+          name: books-${{ matrix.range.start }}-${{ matrix.range.end }}
+          path: books_${{ matrix.range.start }}_${{ matrix.range.end }}.ndjson

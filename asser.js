@@ -2,29 +2,25 @@ const fs = require('fs');
 const { chromium } = require('playwright');
 const cheerio = require('cheerio');
 
-
 const COOKIES_PATH = 'cookies.json';
-
-// ✅ Define START_PAGE and END_PAGE before using them
 const START_PAGE = parseInt(process.env.START_PAGE);
 const END_PAGE = parseInt(process.env.END_PAGE);
 
 const OUTPUT_FILE = `books_${START_PAGE}_${END_PAGE}.ndjson`;
 const STREAM = fs.createWriteStream(OUTPUT_FILE, { flags: 'a' });
 
-
 (async () => {
-  const browser = await chromium.launch({ headless: false }); // use xvfb-run
+  const browser = await chromium.launch({ headless: false }); // Use xvfb-run on GitHub
   const context = await browser.newContext();
 
-  // Load cookies if available
+  // Load cookies inside the async function
   if (fs.existsSync(COOKIES_PATH)) {
     const cookies = JSON.parse(fs.readFileSync(COOKIES_PATH, 'utf-8'));
     await context.addCookies(cookies);
     console.log('🔁 Loaded cookies');
   }
 
-  const page = await context.newPage();
+  const page = await context.newPage();git add .
 
   for (let currentPage = START_PAGE; currentPage <= END_PAGE; currentPage++) {
     const listUrl = `https://www.aseeralkotb.com/ar/books?page=${currentPage}`;

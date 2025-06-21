@@ -20,7 +20,7 @@ const STREAM = fs.createWriteStream(OUTPUT_FILE, { flags: 'a' });
     console.log('🔁 Loaded cookies');
   }
 
-  const page = await context.newPage();git add .
+  const page = await context.newPage();
 
   for (let currentPage = START_PAGE; currentPage <= END_PAGE; currentPage++) {
     const listUrl = `https://www.aseeralkotb.com/ar/books?page=${currentPage}`;

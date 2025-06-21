@@ -33,7 +33,7 @@ const STREAM = fs.createWriteStream(OUTPUT_FILE, { flags: 'a' });
         console.log('⏳ Cloudflare challenge... waiting...');
         await page.waitForFunction(
           () => document.title !== 'Just a moment...',
-          { timeout: 20000 }
+          { timeout: 60000 }
         );
         await page.waitForLoadState('networkidle');
       }

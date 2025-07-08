@@ -8,7 +8,7 @@ require 'json'
 # --- ENV inputs ---
 start_page = ENV['START_PAGE'].to_i
 end_page = ENV['END_PAGE'].to_i
-category_path = ENV['CATEGORY_PATH'] || '/books/kids'
+category_path = ENV['CATEGORY_PATH'] || '/books/arabic'
 
 raise "Missing or invalid START_PAGE or END_PAGE" if start_page.zero? || end_page.zero?
 

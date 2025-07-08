@@ -15,10 +15,10 @@ jobs:
       fail-fast: false
       matrix:
         range:
-          - { start: 1, end: 60 }
-          - { start: 61, end: 120 }
-          - { start: 121, end: 180 }
-          - { start: 181, end: 227 }
+          - { start: 1, end: 150 }
+          - { start: 151, end: 300 }
+          - { start: 301, end: 450 }
+          - { start: 451, end: 663 }
 
     steps:
       - name: Checkout repository

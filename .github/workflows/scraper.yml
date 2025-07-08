@@ -12,18 +12,17 @@ jobs:
   scrape:
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
         range:
           - { start: 1, end: 60 }
           - { start: 61, end: 120 }
           - { start: 121, end: 180 }
           - { start: 181, end: 227 }
-          
-          
-          
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
@@ -40,8 +39,8 @@ jobs:
         env:
           START_PAGE: ${{ matrix.range.start }}
           END_PAGE: ${{ matrix.range.end }}
-        run: ruby salam.rb
-
+          CATEGORY_PATH: "/books/arabic"   # You can override this if needed
+        run: ruby shourouk_split.rb
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:

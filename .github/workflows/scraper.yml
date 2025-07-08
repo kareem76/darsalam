@@ -1,4 +1,4 @@
-name: Parallel Scraper
+name: Full Scraper
 
 on:
   push:
@@ -11,14 +11,6 @@ on:
 jobs:
   scrape:
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        range:
-          - { start: 1, end: 150 }
-          - { start: 151, end: 300 }
-          - { start: 301, end: 450 }
-          - { start: 451, end: 663 }
 
     steps:
       - name: Checkout repository
@@ -37,14 +29,15 @@ jobs:
 
       - name: Run scraper
         env:
-          START_PAGE: ${{ matrix.range.start }}
-          END_PAGE: ${{ matrix.range.end }}
-          CATEGORY_PATH: "/books/arabic"   # You can override this if needed
+          START_PAGE: 1
+          END_PAGE: 663
+          CATEGORY_PATH: "/books/arabic"
         run: ruby shourouk_split.rb
+
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: books-${{ matrix.range.start }}-${{ matrix.range.end }}
+          name: books-1-663
           path: |
-            books_${{ matrix.range.start }}_${{ matrix.range.end }}.csv
-            books_${{ matrix.range.start }}_${{ matrix.range.end }}.json
+            books_1_663.csv
+            books_1_663.json
